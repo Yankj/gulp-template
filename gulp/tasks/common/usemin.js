@@ -38,7 +38,9 @@ gulp.task('usemin', function() { //
 				plumber(errorHandler),
 				htmlmin({
 					collapseWhitespace: true,
-					removeComments: true
+					removeComments: true,
+					minifyJS: true,
+					minifyCSS: true
 				})
 			]
 		}))
