@@ -22,3 +22,6 @@ npm run build-test                         //静态资源不放CDN
 npm run build-product               //静态资源不放CDN
 npm run build-product-cdn         //静态资源放CDN
 ```
+
+## Help
+@冯银超(yinchaofeng@sohu-inc.com)
