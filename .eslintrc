@@ -1,0 +1,17 @@
+/*
+	更多规则：https://eslint.org/docs/rules/
+ */
+{
+	"parser": "babel-eslint",
+	"rules":
+	{
+		"strict": 1, //严格模式
+		"eqeqeq": 1, //=== & ！==
+		"no-eval": 1, //No eval(..)
+		"no-redeclare": 1, //不重复声明
+		"camelcase": 1, //命名驼峰化
+		"semi": 1, //总是带分号
+		"no-var": 1, //不使用 var
+		"prefer-const": 1 // 声明后未改变的使用 const
+	}
+}
