@@ -1,6 +1,6 @@
 let gulp = require('gulp'),
 	config = require('../../config.js'),
-	minifyCSS = require('gulp-minify-css'),
+	cleanCSS = require('gulp-clean-css'),
 	htmlmin = require('gulp-htmlmin'),
 	uglify = require('gulp-uglify'),
 	revAll = require('gulp-rev-all'),
@@ -18,7 +18,7 @@ gulp.task('usemin', function() { //
 		})
 		.pipe(usemin({
 			css: [
-				minifyCSS(),
+				cleanCSS(),
 				revAll.revision({
 					hashLength: 4
 				})

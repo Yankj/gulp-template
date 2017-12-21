@@ -1,6 +1,7 @@
 let gulp = require('gulp'),
 	config = require('../../config.js'),
 	sass = require('gulp-sass'),
+	// postCss = require('gulp-postcss'),
 	uncss = require('gulp-uncss'), //删除多余css
 	autoprefixer = require('gulp-autoprefixer'),
 	plumber = require('gulp-plumber'), //错误自启动
