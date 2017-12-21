@@ -15,21 +15,21 @@ gulp.task('zip', function(cb) {
 
 gulp.task('zip-all', function() {
 	let zip_name = 'sce_' + config.sce[env].appId + '.zip';
-	return gulp.src([config.dest + '/**/*'])
+	return gulp.src([config.dest + 'sce/**/*'])
 		.pipe(zip(zip_name))
 		.pipe(gulp.dest(config.dest));
 });
 
 gulp.task('zip-static', function() {
 	let cdn_project_name = 'toCDN_' + config.cdnPath.replace(/.+\.com\//, "").replace(/\//g, "") + ".zip";
-	return gulp.src(config.dest + 'sce/app/static/**/*')
+	return gulp.src(config.dest + 'sce/app/static/**')
 		.pipe(zip(cdn_project_name))
 		.pipe(gulp.dest(config.dest));
 });
 
 gulp.task('zip-sce', function() {
 	let zip_name = 'sce_' + config.sce[env].appId + '.zip';
-	return gulp.src([config.dest + '*/**', '!' + config.dest + 'sce/app/static/**/*'])
+	return gulp.src([config.dest + 'sce/**', '!' + config.dest + 'sce/app/static/**'])
 		.pipe(zip(zip_name))
 		.pipe(gulp.dest(config.dest));
 });
