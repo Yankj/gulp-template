@@ -1,19 +1,21 @@
 let gulp = require('gulp'),
 	config = require('../../config.js'),
 	babel = require('gulp-babel');
+
 let {
 	NODE_ENV
 } = process.env;
+
 gulp.task('ES6', function() {
 	return gulp.src([config.src + 'static/es6/**/*', '!' + config.src + 'static/es6/**/*.min.js'])
 		.pipe(babel({
 			presets: [
 				['env', {
 					"targets": {
-						"safari": 10
+						browsers: ["safari>=9", "android>=6", "ios>=9"] //可取值：chrome, opera, edge, firefox, safari, ie, ios, android, node, electron.
 					},
-					"modules": false,
-					"useBuiltIns": true,
+					"modules": false, //可取值"amd" | "umd" | "systemjs" | "commonjs" | false, defaults to "commonjs".
+					"useBuiltIns": true, //使用'babel-polyfill'
 					"debug": NODE_ENV === 'product' ? false : true
 				}]
 			]
