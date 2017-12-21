@@ -1,5 +1,6 @@
 let gulp = require('gulp'),
 	requireDir = require('require-dir'),
+	chalk = require('chalk'),
 	runSequence = require('run-sequence');
 
 let {
@@ -13,7 +14,7 @@ requireDir('./gulp/tasks', {
 });
 
 gulp.task('build', function(cb) { //默认不放 CDN
-	// runSequence(['delDest', 'sass', 'ES6'], ['usemin', 'sceConfig', 'copyStatic'], ['revision'], ['cdnPre'], ['zip'], cb);
+	console.log('\n\n/***********************    打包开始，当前环境为：' + chalk.blue.bold(env) + '    ***********************/' + '\n');
 	runSequence(['delDest', 'sass', 'ES6'], ['usemin', 'sceConfig', 'copyStatic'], ['revision'], ['cdnPre'], ['zip'], cb);
 })
 
