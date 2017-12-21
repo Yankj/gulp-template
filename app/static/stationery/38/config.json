@@ -1,0 +1,19 @@
+{
+  "name": "沙漠风情",
+  "header": "header.png",
+  "middle": "middle.png",
+  "footer": "footer.png",
+  "headerHeight": 79,
+  "middleHeight": 294,
+  "footerHeight": 105,
+  "BTNChangeTitleBackgroundColor": "0xcddcd8",
+  "dateColor": "0x7F938D",
+  "quoteLineColor": "0x7F938D",
+  "textViewPlaceholderColor":"0xa0aba8",
+  "borderColor": "0x7F938D",
+  "draggingPlaceholderColor": "0x7F938D",
+  "draggingBorderColor": "0x7F938D",
+  "draggingImageBorderColor":"0x7F938D",
+  "imageNoteBorderColor":"0x7F938D",
+  "imageNoteTextColor":"0x7F938D"
+}

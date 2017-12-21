@@ -1,0 +1,19 @@
+{
+  "name": "感恩之夜",
+  "header": "header.png",
+  "middle": "middle.png",
+  "footer": "footer.png",
+  "headerHeight": 75,
+  "middleHeight": 105,
+  "footerHeight": 100,
+  "BTNChangeTitleBackgroundColor": "0xfce8b3",
+  "dateColor": "0xbb784d",
+  "quoteLineColor": "0xbb784d",
+  "textViewPlaceholderColor":"0x74381d",
+  "borderColor": "0xfce8b3",
+  "draggingPlaceholderColor": "0xfce8b3",
+  "draggingBorderColor": "0xfce8b3",
+  "draggingImageBorderColor":"0xfce8b3",
+  "imageNoteBorderColor":"0xfce8b3",
+  "imageNoteTextColor":"0xbb784d"
+}

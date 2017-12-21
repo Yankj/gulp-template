@@ -1,0 +1,19 @@
+{
+  "name": "枫情秋娘",
+  "header": "header.png",
+  "middle": "middle.png",
+  "footer": "footer.png",
+  "headerHeight": 128,
+  "middleHeight": 159,
+  "footerHeight": 157,
+  "BTNChangeTitleBackgroundColor": "0xb9a7da",
+  "dateColor": "0x8b7ca5",
+  "quoteLineColor": "0xd5c8ed",
+  "textViewPlaceholderColor":"0x9b87be",
+  "borderColor": "0xeae3f5",
+  "draggingPlaceholderColor": "0xeae3f5",
+  "draggingBorderColor": "0xeae3f5",
+  "draggingImageBorderColor":"0xeae3f5",
+  "imageNoteBorderColor":"0xeae3f5",
+  "imageNoteTextColor":"0x5d536f"
+}

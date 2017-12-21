@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-store, must-revalidate" />
+    <meta http-equiv="expires" content="0" />
+    <title>搜狐墨客</title>
+    <!-- build:css ../static/css/main-css -->
+    <link rel="stylesheet" href="../static/css/index-share.css">
+    <!-- endbuild -->
+    <script>
+    function renderInit() {
+        var clientWidth = document.documentElement.clientWidth < 500 ? document.documentElement.clientWidth : 500;
+        document.documentElement.style.fontSize = clientWidth / 7.5 + 'px';
+    }
+    window.onresize = renderInit;
+    renderInit();
+    </script>
+</head>
+
+<body>
+    <div id="content">
+        <header class="top-banner">
+            <div>
+                <img src="../static/img/share.jpg" alt="">
+                <span>弹指成文，我的笔墨新世界</span>
+                <!-- <a href="http://ink-promo.sohusce.com/itunes/?guid=52c66b09131a">立即下载</a> -->
+                <span class="download">立即下载</span>
+            </div>
+        </header>
+        <main>
+            <article>
+                <aside>
+                    <!-- 作者信息 -->
+                </aside>
+                <section>
+                    <!-- 作品信息 -->
+                </section>
+                <footer>
+                    <div class="download">
+                        <img src="../static/img/share-bottom.png" alt="">
+                    </div>
+                </footer>
+            </article>
+        </main>
+    </div>
+    <template id="author">
+        <a href="">
+            <img src="{{=it.avatar}}" alt="">
+        </a>
+        <span class="author-name">{{=it.nickname}}</span>
+        <span class="author">作者</span>
+    </template>
+    <template id='article-pic'>
+        <div class="pic-wrap">
+            <!-- user_id存在，文章就存在 -->
+            {{~it.images :value:index}}
+            <div class="img" style="background: #f9f9f9 url('{{=value.url}}') no-repeat left top/100%"></div>
+            {{~}}
+            <span class='end'>END</span>
+        </div>
+    </template>
+    <template id="article-h5">
+        {{?it.articleId}}
+        <div class="wrapper" id="ink-wrapper">
+            <!-- 是否存在页头 -->
+            {{? it['coverImageURL'] != "#" }}
+            <div class="img-box cover-img">
+                <img src="{{= it['coverImageURL'] }}">
+            </div>
+            {{?}}
+            <div class="container-h5">
+                <!-- 循环遍历每个段落 -->
+                {{~ it['content']: block :blockIndex }}
+                <!-- paragraph-{{= blockIndex }} -->
+                <div class="paragraph {{= block['classList'] }}">
+                    {{? block['type'] == 'Title' }}
+                    <div class="title-box">
+                        <h2 class="title fontSize{{= it['globalFontSize']}} font-family{{= it['globalFontsID']}}" style="line-height:{{= it['globalFontSize'] + 6 }}px">
+                        {{= it['title']||'无题'}}
+                      </h2> {{? it['timeStamp'] != null }}
+                        <p class="time">{{= it['timeStamp'] }}</p>
+                        {{?}}
+                    </div>
+                    {{?? block['type'] == 'Image' }}
+                    <div class="img-box">
+                        <img src="{{=block['imageURL']}}">
+                    </div>
+                    <!-- 是否存在图片描述信息 -->
+                    {{? block['desc'] }}
+                    <p class="img-explain {{= block['classList'] }}" style="{{= block['cssText'] }}">
+                        {{= block['desc'] }}
+                    </p>
+                    {{?}} {{?? block['type'] == 'Text' }}
+                    <div class="text-box {{= block['classList'] }}" style="{{= block['cssText'] }}">
+                        <i class="before" style="{{= block['quoteStyle'] }}"></i> {{= block['content'] }}
+                    </div>
+                    {{?}}
+                </div>
+                {{~}}
+            </div>
+            <span class="end">END</span>
+        </div>
+        {{?}}
+    </template>
+    <template id='error'>
+        <div class="error-wrap">
+            <img class='error' src="../static/img/002A.png" alt="">
+            <div class="dsp">{{=it.error}}</div>
+        </div>
+    </template>
+    <!-- build:js ../static/js/admin.js -->
+    <script src="../static/js/lib/zepto.min.js"></script>
+    <script src="../static/js/lib/doT.min.js"></script>
+    <script src="../static/js/index-admin.js"></script>
+    </script>
+    <!-- endbuild -->
+</body>
+
+</html>

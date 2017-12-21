@@ -1,0 +1,19 @@
+{
+  "name": "旅行信纸",
+  "header": "header.png",
+  "middle": "middle.png",
+  "footer": "footer.png",
+  "headerHeight": 65,
+  "middleHeight": 173,
+  "footerHeight": 150,
+  "BTNChangeTitleBackgroundColor": "0xF2C96C",
+  "dateColor": "0xF2C96C",
+  "quoteLineColor": "0xF2C96C",
+  "textViewPlaceholderColor":"0xA29B8B",
+  "borderColor": "0xF2C96C",
+  "draggingPlaceholderColor": "0xF2C96C",
+  "draggingBorderColor": "0xF2C96C",
+  "draggingImageBorderColor":"0xF2C96C",
+  "imageNoteBorderColor":"0xF2C96C",
+  "imageNoteTextColor":"0xA29B8B"
+}

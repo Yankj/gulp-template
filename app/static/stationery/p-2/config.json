@@ -1,0 +1,20 @@
+{
+  "goods_id": "-2",
+  "name": "牛皮纸",
+  "header": "header.png",
+  "middle": "middle.png",
+  "footer": "footer.png",
+  "headerHeight": 60,
+  "middleHeight": 100,
+  "footerHeight": 60,
+  "BTNChangeTitleBackgroundColor": "0x7a6a5b",
+  "dateColor": "0x685542",
+  "quoteLineColor": "0x6d5d51",
+  "textViewPlaceholderColor": "0x6d5d51",
+  "borderColor": "0x6d5d51",
+  "draggingPlaceholderColor": "0x6d5d51",
+  "draggingBorderColor": "0x6d5d51",
+  "draggingImageBorderColor": "0x6d5d51",
+  "imageNoteBorderColor": "0x6d5d51",
+  "imageNoteTextColor": "0x685542"
+}

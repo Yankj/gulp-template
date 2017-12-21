@@ -1,0 +1,19 @@
+{
+  "name": "跑步信纸",
+  "header": "header.png",
+  "middle": "middle.png",
+  "footer": "footer.png",
+  "headerHeight": 85,
+  "middleHeight": 173,
+  "footerHeight": 150,
+  "BTNChangeTitleBackgroundColor": "0xE8D5B5",
+  "dateColor": "0x808080",
+  "quoteLineColor": "0xE8D5B5",
+  "textViewPlaceholderColor":"0xD1D1D1",
+  "borderColor": "0xE8D5B5",
+  "draggingPlaceholderColor": "0xE8D5B5",
+  "draggingBorderColor": "0xE8D5B5",
+  "draggingImageBorderColor":"0xE8D5B5",
+  "imageNoteBorderColor":"0xE8D5B5",
+  "imageNoteTextColor":"0xD1D1D1"
+}

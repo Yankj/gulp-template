@@ -1,0 +1,16 @@
+{
+  "name": "整蛊专家",
+  "quoteLineColor": "0xcdc2db",
+  "borderColor": "0xf1e9f6",
+  "draggingBorderColor": "0xf1e9f6",
+  "draggingPlaceholderColor": "0xf1e9f6",
+  "textViewPlaceholderColor": "0xcdc2db",  
+  "BTNChangeTitleBackgroundColor": "0xf1e9f6",
+  "dateColor": "0xcdc2db",
+  "header": "header.png",
+  "middle": "middle.png",
+  "footer": "footer.png",
+  "headerHeight": 65,
+  "middleHeight": 200,
+  "footerHeight": 120
+}

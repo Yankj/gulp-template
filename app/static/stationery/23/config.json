@@ -1,0 +1,16 @@
+{
+  "name": "清明寒食",
+  "quoteLineColor": "0xa9b3a8",
+  "borderColor": "0xe3e5e3",
+  "draggingBorderColor": "0xe3e5e3",
+  "draggingPlaceholderColor": "0xe3e5e3",  
+  "textViewPlaceholderColor": "0xa9b3a8",
+  "BTNChangeTitleBackgroundColor": "0xe3e5e3",
+  "dateColor": "0xa9b3a8",
+  "header": "header.png",
+  "middle": "middle.png",
+  "footer": "footer.png",
+  "headerHeight": 70,
+  "middleHeight": 200,
+  "footerHeight": 105
+}

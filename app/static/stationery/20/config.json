@@ -1,0 +1,15 @@
+{
+  "name": "可爱女生",
+  "quoteLineColor": "0xecd3d3",
+  "borderColor": "0xfaecec",
+  "draggingBorderColor": "0xfaecec",
+  "draggingPlaceholderColor": "0xfaecec",
+  "BTNChangeTitleBackgroundColor": "0xfaecec",
+  "dateColor": "0xecd3d3",
+  "header": "header.png",
+  "middle": "middle.png",
+  "footer": "footer.png",
+  "headerHeight": 87,
+  "middleHeight": 200,
+  "footerHeight": 170
+}

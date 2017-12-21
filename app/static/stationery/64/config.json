@@ -1,0 +1,19 @@
+{
+  "name": "南瓜信纸",
+  "header": "header.png",
+  "middle": "middle.png",
+  "footer": "footer.png",
+  "headerHeight": 66,
+  "middleHeight": 350,
+  "footerHeight": 147,
+  "BTNChangeTitleBackgroundColor": "0xf8a902",
+  "dateColor": "0x987340",
+  "quoteLineColor": "0xff6000",
+  "textViewPlaceholderColor":"0xb77010",
+  "borderColor": "0xf77902",
+  "draggingPlaceholderColor": "0xff6000",
+  "draggingBorderColor": "0xf77902",
+  "draggingImageBorderColor":"0xf77902",
+  "imageNoteBorderColor":"0xf77902",
+  "imageNoteTextColor":"0xe71515"
+}

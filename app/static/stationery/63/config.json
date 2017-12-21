@@ -1,0 +1,19 @@
+{
+  "name": "万圣信纸",
+  "header": "header.png",
+  "middle": "middle.png",
+  "footer": "footer.png",
+  "headerHeight": 98,
+  "middleHeight": 160,
+  "footerHeight": 150,
+  "BTNChangeTitleBackgroundColor": "0x979FB8",
+  "dateColor": "0x979FB8",
+  "quoteLineColor": "0x979FB8",
+  "textViewPlaceholderColor":"0x505A7A",
+  "borderColor": "0x979FB8",
+  "draggingPlaceholderColor": "0x979FB8",
+  "draggingBorderColor": "0x979FB8",
+  "draggingImageBorderColor":"0x979FB8",
+  "imageNoteBorderColor":"0x979FB8",
+  "imageNoteTextColor":"0x505A7A"
+}

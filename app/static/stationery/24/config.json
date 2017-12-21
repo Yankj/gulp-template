@@ -1,0 +1,19 @@
+{
+  "name": "劳动节",
+  "header": "header.png",
+  "middle": "middle.png",
+  "footer": "footer.png",
+  "headerHeight": 120,
+  "middleHeight": 200,
+  "footerHeight": 90,
+  "BTNChangeTitleBackgroundColor": "0xe5e3d1",
+  "dateColor": "0x82807d",
+  "quoteLineColor": "0xe5e3d1",
+  "textViewPlaceholderColor":"0xc9c7b9",
+  "borderColor": "0xe5e3d1",
+  "draggingPlaceholderColor": "0xe5e3d1",
+  "draggingBorderColor": "0xe5e3d1",
+  "draggingImageBorderColor":"0xe5e3d1",
+  "imageNoteBorderColor":"0xe5e3d1",
+  "imageNoteTextColor":"0x82807d"
+}

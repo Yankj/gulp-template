@@ -1,0 +1,20 @@
+{
+  "goods_id": "-3",
+  "name": "清新木纹",
+  "header": "header.png",
+  "middle": "middle.png",
+  "footer": "footer.png",
+  "headerHeight": 60,
+  "middleHeight": 100,
+  "footerHeight": 60,
+  "BTNChangeTitleBackgroundColor": "0xc0b5a7",
+  "dateColor": "0x9f9c96",
+  "quoteLineColor": "0xc0b5a7",
+  "textViewPlaceholderColor": "0xc0b5a7",
+  "borderColor": "0xc0b5a7",
+  "draggingPlaceholderColor": "0xc0b5a7",
+  "draggingBorderColor": "0xc0b5a7",
+  "draggingImageBorderColor": "0xc0b5a7",
+  "imageNoteBorderColor": "0xc0b5a7",
+  "imageNoteTextColor": "0x9f9c96"
+}

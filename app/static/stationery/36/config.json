@@ -1,0 +1,19 @@
+{
+  "name": "月满山河",
+  "header": "header.png",
+  "middle": "middle.png",
+  "footer": "footer.png",
+  "headerHeight": 95,
+  "middleHeight": 187,
+  "footerHeight": 110,
+  "BTNChangeTitleBackgroundColor": "0xe6e2cb",
+  "dateColor": "0x838383",
+  "quoteLineColor": "0xe6e2cb",
+  "textViewPlaceholderColor":"0xb5b5b5",
+  "borderColor": "0xe6e2cb",
+  "draggingPlaceholderColor": "0xe6e2cb",
+  "draggingBorderColor": "0xe6e2cb",
+  "draggingImageBorderColor":"0xe6e2cb",
+  "imageNoteBorderColor":"0xe6e2cb",
+  "imageNoteTextColor":"0x838383"
+}

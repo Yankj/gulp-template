@@ -1,0 +1,19 @@
+{
+  "name": "猫星人",
+  "header": "header.png",
+  "middle": "middle.png",
+  "footer": "footer.png",
+  "headerHeight": 100,
+  "middleHeight": 210,
+  "footerHeight": 200,
+  "BTNChangeTitleBackgroundColor": "0xf3d986",
+  "dateColor": "0xa29b39",
+  "quoteLineColor": "0xf3d986",
+  "textViewPlaceholderColor":"0x43342e",
+  "borderColor": "0xf3d986",
+  "draggingPlaceholderColor": "0xf3d986",
+  "draggingBorderColor": "0xf3d986",
+  "draggingImageBorderColor":"0xf3d986",
+  "imageNoteBorderColor":"0xf3d986",
+  "imageNoteTextColor":"0xa29b39"
+}

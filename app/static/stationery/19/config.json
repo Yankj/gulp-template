@@ -1,0 +1,15 @@
+{
+  "name": "丘比特",
+  "quoteLineColor": "0xbab7af",
+  "borderColor": "0xe6e5de",
+  "draggingBorderColor": "0xe6e5de",
+  "draggingPlaceholderColor": "0xe6e5de",
+  "BTNChangeTitleBackgroundColor": "0xe6e5de",
+  "dateColor": "0xbab7af",
+  "header": "header.png",
+  "middle": "middle.png",
+  "footer": "footer.png",
+  "headerHeight": 80,
+  "middleHeight": 200,
+  "footerHeight": 80
+}

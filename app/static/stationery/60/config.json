@@ -1,0 +1,19 @@
+{
+  "name": "欢庆国庆",
+  "header": "header.png",
+  "middle": "middle.png",
+  "footer": "footer.png",
+  "headerHeight": 95,
+  "middleHeight": 159,
+  "footerHeight": 162,
+  "BTNChangeTitleBackgroundColor": "0xa0d1e4",
+  "dateColor": "0x477a8e",
+  "quoteLineColor": "0x477a8e",
+  "textViewPlaceholderColor":"0x477a8e",
+  "borderColor": "0x7bb2aa",
+  "draggingPlaceholderColor": "0x477a8e",
+  "draggingBorderColor": "0x7bb2aa",
+  "draggingImageBorderColor":"0x7bb2aa",
+  "imageNoteBorderColor":"0x7bb2aa",
+  "imageNoteTextColor":"0x477a8e"
+}

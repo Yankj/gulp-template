@@ -1,0 +1,19 @@
+{
+  "name": "旅游信纸",
+  "header": "header.png",
+  "middle": "middle.png",
+  "footer": "footer.png",
+  "headerHeight": 105,
+  "middleHeight": 159,
+  "footerHeight": 162,
+  "BTNChangeTitleBackgroundColor": "0x85acd8",
+  "dateColor": "0x385992",
+  "quoteLineColor": "0xc6f2ff",
+  "textViewPlaceholderColor":"0x55a6b6",
+  "borderColor": "0x55a6b6",
+  "draggingPlaceholderColor": "0x55a6b6",
+  "draggingBorderColor": "0x7897ba",
+  "draggingImageBorderColor":"0x7897ba",
+  "imageNoteBorderColor":"0x7897ba",
+  "imageNoteTextColor":"0x2c497b"
+}

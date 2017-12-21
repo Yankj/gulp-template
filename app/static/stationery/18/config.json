@@ -1,0 +1,15 @@
+{
+  "name": "情人节",
+  "quoteLineColor": "0xc0b8b8",
+  "borderColor": "0xeee5e3",
+  "draggingBorderColor": "0xeee5e3",
+  "draggingPlaceholderColor": "0xeee5e3",
+  "BTNChangeTitleBackgroundColor": "0xeee5e3",
+  "dateColor": "0xc0b8b8",
+  "header": "header.png",
+  "middle": "middle.png",
+  "footer": "footer.png",
+  "headerHeight": 80,
+  "middleHeight": 200,
+  "footerHeight": 150
+}

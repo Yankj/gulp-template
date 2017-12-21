@@ -1,0 +1,19 @@
+{
+  "name": "长亭望月",
+  "header": "header.png",
+  "middle": "middle.png",
+  "footer": "footer.png",
+  "headerHeight": 128,
+  "middleHeight": 159,
+  "footerHeight": 157,
+  "BTNChangeTitleBackgroundColor": "0x6c9da7",
+  "dateColor": "0x3b6a76",
+  "quoteLineColor": "0xa9c9d1",
+  "textViewPlaceholderColor":"0x3b6a76",
+  "borderColor": "0xd8eef2",
+  "draggingPlaceholderColor": "0xc8e4eb",
+  "draggingBorderColor": "0xd8eef2",
+  "draggingImageBorderColor":"0xd8eef2",
+  "imageNoteBorderColor":"0xd8eef2",
+  "imageNoteTextColor":"0x3b6a76"
+}

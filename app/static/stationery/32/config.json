@@ -1,0 +1,19 @@
+{
+  "name": "kiss me",
+  "header": "header.png",
+  "middle": "middle.png",
+  "footer": "footer.png",
+  "headerHeight": 81,
+  "middleHeight": 158,
+  "footerHeight": 144,
+  "BTNChangeTitleBackgroundColor": "0x668eff",
+  "dateColor": "0x4c4c4c",
+  "quoteLineColor": "0x668eff",
+  "textViewPlaceholderColor":"0xbbd0ff",
+  "borderColor": "0x668eff",
+  "draggingPlaceholderColor": "0x668eff",
+  "draggingBorderColor": "0x668eff",
+  "draggingImageBorderColor":"0x668eff",
+  "imageNoteBorderColor":"0x668eff",
+  "imageNoteTextColor":"0x4c4c4c"
+}

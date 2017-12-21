@@ -1,0 +1,19 @@
+{
+  "name": "中秋信纸",
+  "header": "header.png",
+  "middle": "middle.png",
+  "footer": "footer.png",
+  "headerHeight": 100,
+  "middleHeight": 155,
+  "footerHeight": 150,
+  "BTNChangeTitleBackgroundColor": "0xa0d1d0",
+  "dateColor": "0x619b9a",
+  "quoteLineColor": "0xa0d1d0",
+  "textViewPlaceholderColor":"0xffffff",
+  "borderColor": "0xa0d1d0",
+  "draggingPlaceholderColor": "0xa0d1d0",
+  "draggingBorderColor": "0xa0d1d0",
+  "draggingImageBorderColor":"0xa0d1d0",
+  "imageNoteBorderColor":"0xa0d1d0",
+  "imageNoteTextColor":"0x619b9a"
+}

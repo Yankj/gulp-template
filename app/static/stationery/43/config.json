@@ -1,0 +1,19 @@
+{
+  "name": "丰收信纸",
+  "header": "header.png",
+  "middle": "middle.png",
+  "footer": "footer.png",
+  "headerHeight": 90,
+  "middleHeight": 158,
+  "footerHeight": 140,
+  "BTNChangeTitleBackgroundColor": "0xe8ddbf",
+  "dateColor": "0xc4b795",
+  "quoteLineColor": "0xe8ddbf",
+  "textViewPlaceholderColor":"0xdacda9",
+  "borderColor": "0xe8ddbf",
+  "draggingPlaceholderColor": "0xdacda9",
+  "draggingBorderColor": "0xe8ddbf",
+  "draggingImageBorderColor":"0xe8ddbf",
+  "imageNoteBorderColor":"0xe8ddbf",
+  "imageNoteTextColor":"0xe8ddbf"
+}

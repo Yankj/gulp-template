@@ -1,0 +1,19 @@
+{
+  "name": "少年与猫",
+  "header": "header.png",
+  "middle": "middle.png",
+  "footer": "footer.png",
+  "headerHeight": 75,
+  "middleHeight": 158,
+  "footerHeight": 150,
+  "BTNChangeTitleBackgroundColor": "0xd9d9d9",
+  "dateColor": "0xccc9c9",
+  "quoteLineColor": "0xd9d9d9",
+  "textViewPlaceholderColor":"0xdedede",
+  "borderColor": "0xd9d9d9",
+  "draggingPlaceholderColor": "0xfcf2e5",
+  "draggingBorderColor": "0xd9d9d9",
+  "draggingImageBorderColor":"0xd9d9d9",
+  "imageNoteBorderColor":"0xd9d9d9",
+  "imageNoteTextColor":"0xccc9c9"
+}

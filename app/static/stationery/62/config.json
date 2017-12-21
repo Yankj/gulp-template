@@ -1,0 +1,19 @@
+{
+  "name": "花好月圆",
+  "header": "header.png",
+  "middle": "middle.png",
+  "footer": "footer.png",
+  "headerHeight": 90,
+  "middleHeight": 161,
+  "footerHeight": 80,
+  "BTNChangeTitleBackgroundColor": "0xf7f4d8",
+  "dateColor": "0xdbd17c",
+  "quoteLineColor": "0xf7f4d8",
+  "textViewPlaceholderColor":"0xdbd17c",
+  "borderColor": "0xf7f4d8",
+  "draggingPlaceholderColor": "0xf7f4d8",
+  "draggingBorderColor": "0xf7f4d8",
+  "draggingImageBorderColor":"0xf7f4d8",
+  "imageNoteBorderColor":"0xf7f4d8",
+  "imageNoteTextColor":"0xdbd17c"
+}
