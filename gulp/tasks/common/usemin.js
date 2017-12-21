@@ -12,7 +12,7 @@ let gulp = require('gulp'),
 let errorHandler = require('../../util.js');
 gulp.task('usemin', function() { //
 	return gulp.src([
-			config.src + 'view/ink-share.html'
+			config.src + 'view/*.html'
 		], {
 			base: config.src
 		})
