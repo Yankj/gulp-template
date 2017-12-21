@@ -1,7 +1,7 @@
 let config = {
 	src: 'app/',
 	startPath: '/view/ink-share.html', //自行修改
-	dest: 'dest/',
+	dest: 'dist/',
 	cdnPath: '//ink_wf.cdn.sohusce.com/club-h5/', //自行修改
 	sce: {
 		manageUrl: '//console.sce.sohuno.com/apps/versions?appid=',
