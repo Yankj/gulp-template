@@ -4,7 +4,8 @@ let gulp = require('gulp'),
 	zip = require('gulp-zip');
 
 let {
-	CDN: cdn
+	CDN: cdn,
+	NODE_ENV: env
 } = process.env;
 
 gulp.task('zip', function(cb) {
