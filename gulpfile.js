@@ -13,7 +13,8 @@ requireDir('./gulp/tasks', {
 });
 
 gulp.task('build', function(cb) { //默认不放 CDN
-	runSequence(['delDest', 'sass'], ['usemin', 'sceConfig', 'copyStatic', 'copyStationery'], ['revision'], ['cdnPre'], ['zip'], cb);
+	// runSequence(['delDest', 'sass', 'ES6'], ['usemin', 'sceConfig', 'copyStatic'], ['revision'], ['cdnPre'], ['zip'], cb);
+	runSequence(['delDest', 'sass', 'ES6'], ['usemin', 'sceConfig', 'copyStatic'], ['revision'], ['cdnPre'], ['zip'], cb);
 })
 
 gulp.task('dev', function(cb) {

@@ -5,8 +5,17 @@ let gulp = require('gulp'),
 gulp.task('ES6', function() {
 	return gulp.src([config.src + 'static/es6/**/*', '!' + config.src + 'static/es6/**/*.min.js'])
 		.pipe(babel({
-			presets: ['env'],
-			plugins: ['transform-runtime']
+			presets: [
+				['env', {
+					"targets": {
+						"safari": 10
+					},
+					"modules": false,
+					"useBuiltIns": true,
+					"debug": true
+				}]
+			]
+			// plugins: ['transform-runtime']
 		}))
 		.pipe(gulp.dest(config.src + 'static/js'))
 });

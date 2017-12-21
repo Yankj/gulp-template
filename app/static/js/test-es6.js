@@ -1,3 +1,16 @@
+let asyncPrint = (() => {
+	var _ref = _asyncToGenerator(function* (value, ms) {
+		yield timeout(ms); //这里是阻塞的
+		console.log(value);
+	});
+
+	return function asyncPrint(_x, _x2) {
+		return _ref.apply(this, arguments);
+	};
+})();
+
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
+
 /*
 	ES6 新增常用属性测试
  */
@@ -5,16 +18,16 @@
 // 1、arrow function
 let f = () => {
 	console.log(123);
-}
+};
 
 // 2、Promise    IOS safari>=8 Android>=4.4.4
 let ajax = () => {
 	return new Promise(res => {
 		setTimeout(() => {
-			res()
+			res();
 		}, 1000);
-	})
-}
+	});
+};
 
 // 3、解构赋值
 const obj = {
@@ -29,18 +42,15 @@ let s = 'world!';
 let str1 = `hello ${s}`;
 
 // 5、函数默认参数
-const f1 = (
-	a = 1,
-	b = 2
-) => {
+const f1 = (a = 1, b = 2) => {
 	console.log(a, b);
-}
+};
 f(2);
 
 // 6、rest参数  ...  只能作为最后一个参数
 const fu = (...value) => {
 	console.log(value);
-}
+};
 fu(1, 2, 3, 4);
 
 // 7、数组扩展
@@ -58,22 +68,22 @@ function countSymbols(string) {
 }
 console.log('风之化身.length=', countSymbols('风之化身'));
 // Array.of  将所传参数转为数组
-Array.of(3, 11, 8) // [3, 11, 8]
+Array.of(3, 11, 8); // [3, 11, 8]
 
 // 数组实例方法includes,findIndex
 let b1 = [1, 5, 10, 15].findIndex((value, index, arr) => {
 	return value > 9;
-})
+});
 
-let c = [1, 5, 10, 15].includes(5)
+let c = [1, 5, 10, 15].includes(5);
 console.log(b1, c); // 2 true
 
 // 8、对象扩展
 // Object.is 与===基本一致，除了+0===-0  NaN===NaN
-console.log(+0 === -0) //true
-console.log(NaN === NaN) // false
-console.log(Object.is(+0, -0)) // false
-console.log(Object.is(NaN, NaN)) // true
+console.log(+0 === -0); //true
+console.log(NaN === NaN); // false
+console.log(Object.is(+0, -0)); // false
+console.log(Object.is(NaN, NaN)); // true
 
 // Object.assign  对象的合并 浅拷贝，属性合并
 // 用途：1、给对象添加属性方法；2、设置默认值；3、对象合并
@@ -81,13 +91,10 @@ console.log(Object.is(NaN, NaN)) // true
 
 // 9、异步函数
 function timeout(ms) {
-	return new Promise((resolve) => {
+	return new Promise(resolve => {
 		setTimeout(resolve, ms);
 	});
 }
-async function asyncPrint(value, ms) {
-	await timeout(ms); //这里是阻塞的
-	console.log(value);
-}
+
 asyncPrint('hello world', 5000); //这里非阻塞
 console.log('你好啊');

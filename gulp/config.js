@@ -1,6 +1,6 @@
 let config = {
 	src: 'app/',
-	startPath: '/view/ink-share.html', //自行修改
+	startPath: '/view/index.html', //自行修改
 	dest: 'dist/',
 	cdnPath: '//ink_wf.cdn.sohusce.com/club-h5/', //自行修改
 	sce: {

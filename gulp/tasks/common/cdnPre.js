@@ -8,7 +8,9 @@ let {
 } = process.env;
 // 加MD5戳
 gulp.task('cdnPre', function() { //
-	return gulp.src([config.dest + 'sce/app/view/*.html'])
+	return gulp.src(config.dest + 'sce/app/view/*.html', {
+			base: config.dest + 'sce/app'
+		})
 		.pipe(If(CDN === 'true', Replace(/"[./]*static\//g, '"' + config.cdnPath)))
 		.pipe(gulp.dest(config.dest + 'sce/app'))
 });

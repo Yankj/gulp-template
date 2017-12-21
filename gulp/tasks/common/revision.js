@@ -9,7 +9,9 @@ let {
 } = process.env;
 // 加MD5戳
 gulp.task('revision', function() { //
-	return gulp.src([config.dest + 'sce/app/static/img/**', config.dest + 'sce/app/view/*.html'])
+	return gulp.src([config.dest + 'sce/app/static/img/**', config.dest + 'sce/app/view/*.html'], {
+			base: config.dest + 'sce/app'
+		})
 		.pipe(gulpRevAll.revision({
 			dontRenameFile: [/.*\.html/],
 			hashLength: 4
