@@ -2,8 +2,10 @@ let gulp = require('gulp'),
 	config = require('../../config.js'),
 	runSequence = require('run-sequence'),
 	zip = require('gulp-zip');
-let env = process.env.NODE_ENV,
-	cdn = process.env.CDN;
+
+let {
+	CDN: cdn
+} = process.env;
 
 gulp.task('zip', function(cb) {
 	if (cdn === 'false') {

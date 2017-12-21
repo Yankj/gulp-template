@@ -56,7 +56,7 @@ console.log(Array.from(arrayLike));
 function countSymbols(string) {
 	return Array.from(string).length;
 }
-console.log('风之化身.length=', countSymbols('风之化身'));
+console.log('风之化身.length=', countSymbols('风之化身')); //4
 // Array.of  将所传参数转为数组
 Array.of(3, 11, 8) // [3, 11, 8]
 
