@@ -28,6 +28,9 @@ gulp.task('usemin', function() { //
 				uglify({
 					compress: {
 						drop_console: true
+					},
+					jsAttributes: {
+						defer: true
 					}
 				}),
 				revAll.revision({
