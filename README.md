@@ -2,14 +2,16 @@
 > 基于gulp的自动化构建项目模板
 
 ## 功能
-+ SASS编译，错误重启，自动移除冗余CSS，增量更新
++ SASS编译，错误自重启，移除冗余CSS，增量更新
 + Babel编译，ES6支持
-+ JS，CSS合并压缩
++ eslint检查
++ CSS雪碧图
++ 统一 npm scripts 脚本命令
++ HTML、JS、CSS合并压缩，JS自动defer
 + 静态资源(JS,CSS,Image)加MD5戳防缓存
 + Zip支持
 + 本地开发，实时刷新
-+ eslint检查
-+ 更多...
++ 更多...(提取关键CSS，CSS异步加载等)
 
 ## 使用方式：
 ```javascript
