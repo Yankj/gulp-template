@@ -1,0 +1,42 @@
+.icon {
+	margin-right: .07rem;
+	width: .21rem;
+	height: .21rem;
+	background-size: cover !important;
+	display: inline-block;
+}
+
+.icon-home {
+	background: url(../img/spritesheet.png);
+	background-position: -0px -29px;
+}
+
+.icon-location {
+	background: url(../img/spritesheet.png);
+	background-position: -23px -29px;
+}
+
+.icon-school {
+	background: url(../img/spritesheet.png);
+	background-position: -58px -0px;
+}
+
+.icon-girl {
+	background: url(../img/spritesheet.png);
+	background-position: -0px -0px;
+}
+
+.icon-boy {
+	background: url(../img/spritesheet.png);
+	background-position: -29px -0px;
+}
+
+.icon-job {
+	background: url(../img/spritesheet.png);
+	background-position: -58px -23px;
+}
+
+.icon-business {
+	background: url(../img/spritesheet.png);
+	background-position: -0px -52px;
+}

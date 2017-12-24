@@ -35,7 +35,7 @@ gulp.task('dev-server', function(cb) {
 		// port: 80,
 		middleware: [proxy1, proxyNoCache]
 	});
-	gulp.watch(config.src + "/static/scss/*.scss", ['sass']);
+	gulp.watch(config.src + "/static/scss/*.scss", ['sass'], ['cssSprite']);
 	gulp.watch(config.src + "/static/es6/**/*.js", ['ES6']);
 	gulp.watch([config.src + "/static/js/**",
 		config.src + "/static/css/**",

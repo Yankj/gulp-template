@@ -15,9 +15,9 @@ requireDir('./gulp/tasks', {
 
 gulp.task('build', function(cb) { //默认不放 CDN
 	console.log('\n\n/***********************    打包开始，当前环境为：' + chalk.blue.bold(env) + '    ***********************/' + '\n');
-	runSequence(['delDest', 'sass', 'eslint', 'ES6'], ['usemin', 'sceConfig', 'copyStatic'], ['revision'], ['cdnPre'], ['zip'], cb);
+	runSequence(['delDest', 'sass', 'eslint', 'ES6'], ['cssSprite'], ['usemin', 'sceConfig', 'copyStatic'], ['revision'], ['cdnPre'], ['zip'], cb);
 })
 
 gulp.task('dev', function(cb) {
-	runSequence(['sass', 'eslint', 'ES6'], 'dev-server', cb);
+	runSequence(['sass', 'eslint', 'ES6'], ['cssSprite', 'dev-server'], cb);
 });
