@@ -1,7 +1,7 @@
 let gulp = require('gulp'),
 	Util = require('../../util.js'),
 	Replace = require('gulp-replace'),
-	config = require('../../config.js');
+	config = require('../../../config/config.js');
 let env = process.env.NODE_ENV;
 
 gulp.task('sceConfig', function() {
@@ -13,5 +13,5 @@ gulp.task('sceConfig', function() {
 		}) //backendHost
 		.pipe(Replace(/appid: \d+/, 'appid: ' + config.sce[env].appId))
 		.pipe(Replace(/server_backend1/g, config.sce[env].proxyTable.backend1))
-		.pipe(gulp.dest(config.dest + config.sce.path));
+		.pipe(gulp.dest(config.dist + 'sce/'));
 });

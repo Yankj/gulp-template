@@ -14,12 +14,10 @@
     <link rel="stylesheet" href="../static/css/main.css">
     <!-- endbuild -->
     <script>
-    function renderInit() {
+    (window.onresize = function() {
         var clientWidth = document.documentElement.clientWidth < 500 ? document.documentElement.clientWidth : 500;
         document.documentElement.style.fontSize = clientWidth / 7.5 + 'px';
-    }
-    window.onresize = renderInit;
-    renderInit();
+    })()
     </script>
 </head>
 
@@ -33,6 +31,10 @@
     <i class="icon icon-location"></i>
     <i class="icon icon-boy"></i>
     <i class="icon icon-girl"></i>
+    <img src="../static/img/boy.png" alt="">
+    <!-- build:js ../static/js/test.js-->
+    <script src='../static/js/test-es6.js'></script>
+    <!-- endbuild -->
     <!-- build:remove -->
     <!-- <script src='../static/js/vconsole.min.js'></script> -->
     <!-- <script src='../static/js/vconsole-elements.min.js'></script> -->

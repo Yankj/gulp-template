@@ -1,5 +1,5 @@
 let gulp = require('gulp'),
-	config = require('../../config.js'),
+	config = require('../../../config/config.js'),
 	cleanCSS = require('gulp-clean-css'),
 	htmlmin = require('gulp-htmlmin'),
 	uglify = require('gulp-uglify'),
@@ -11,10 +11,8 @@ let gulp = require('gulp'),
 
 let errorHandler = require('../../util.js');
 gulp.task('usemin', function() { //
-	return gulp.src([
-			config.src + 'view/*.html'
-		], {
-			base: config.src
+	return gulp.src(config.temp + 'view/index.html', {
+			base: config.temp
 		})
 		.pipe(usemin({
 			css: [
@@ -47,5 +45,5 @@ gulp.task('usemin', function() { //
 				})
 			]
 		}))
-		.pipe(gulp.dest(config.dest + 'sce/app'));
+		.pipe(gulp.dest(config.dist + 'sce/app'));
 });

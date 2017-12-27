@@ -1,5 +1,5 @@
 let gulp = require('gulp'),
-	config = require('../../config.js'),
+	config = require('../../../config/config.js'),
 	sass = require('gulp-sass'),
 	// postCss = require('gulp-postcss'),
 	uncss = require('gulp-uncss'), //删除多余css
@@ -22,5 +22,5 @@ gulp.task('sass', function() {
 		.pipe(logger({
 			showChange: true
 		}))
-		.pipe(gulp.dest(config.src + "/static/css"))
+		.pipe(gulp.dest(config.temp + "/static/css"))
 });

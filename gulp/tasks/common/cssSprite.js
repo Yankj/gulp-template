@@ -7,17 +7,17 @@
  */
 
 let gulp = require('gulp'),
-	config = require('../../config.js'),
+	config = require('../../../config/config.js'),
 	spriter = require('gulp-css-spriter');
 
 gulp.task('cssSprite', function() {
-	return gulp.src(config.src + 'static/css/main.css')
+	return gulp.src(config.temp + 'static/css/main.css')
 		.pipe(spriter({
 			// The path and file name of where we will save the sprite sheet 
-			'spriteSheet': config.src + 'static/img/spritesheet.png',
+			'spriteSheet': config.temp + 'static/img/spritesheet.png',
 			// Because we don't know where you will end up saving the CSS file at this point in the pipe, 
 			// we need a litle help identifying where it will be. 
 			'pathToSpriteSheetFromCSS': '../img/spritesheet.png'
 		}))
-		.pipe(gulp.dest(config.src + 'static/css'));
+		.pipe(gulp.dest(config.temp + 'static/css'));
 });

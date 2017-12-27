@@ -1,5 +1,5 @@
 const gulp = require('gulp'),
-	config = require('../../config.js'),
+	config = require('../../../config/config.js'),
 	eslint = require('gulp-eslint');
 
 gulp.task('eslint', () => {

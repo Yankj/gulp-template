@@ -2,41 +2,45 @@
 	margin-right: .07rem;
 	width: .21rem;
 	height: .21rem;
-	background-size: cover !important;
+	background-size: 100% 100% !important;
 	display: inline-block;
 }
 
 .icon-home {
 	background: url(../img/spritesheet.png);
-	background-position: -0px -29px;
+	background-position: -0px -0.39rem;
 }
 
 .icon-location {
 	background: url(../img/spritesheet.png);
-	background-position: -23px -29px;
+	background-position: -0.31rem -0.39rem;
 }
 
 .icon-school {
 	background: url(../img/spritesheet.png);
-	background-position: -58px -0px;
+	background-position: -0.77rem -0px;
 }
 
 .icon-girl {
 	background: url(../img/spritesheet.png);
 	background-position: -0px -0px;
+	width: .3rem;
+	height: .3rem;
 }
 
 .icon-boy {
 	background: url(../img/spritesheet.png);
-	background-position: -29px -0px;
+	background-position: -0.39rem -0px;
+	width: .3rem;
+	height: .3rem;
 }
 
 .icon-job {
 	background: url(../img/spritesheet.png);
-	background-position: -58px -23px;
+	background-position: -0.77rem -0.31rem;
 }
 
 .icon-business {
 	background: url(../img/spritesheet.png);
-	background-position: -0px -52px;
+	background-position: -0px -0.69rem;
 }

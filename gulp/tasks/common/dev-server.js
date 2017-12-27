@@ -1,11 +1,11 @@
 let gulp = require('gulp'),
 	Util = require('../../util.js'),
-	config = require('../../config.js'),
+	config = require('../../../config/config.js'),
 	browserSync = require('browser-sync').create(),
 	proxyMiddleware = require('http-proxy-middleware');
 
 let env = process.env.NODE_ENV,
-	serverPath = env == 'product' ? config.dest : config.src;
+	serverPath = env == 'product' ? config.dist : config.src;
 
 gulp.task('dev-server', function(cb) {
 	let need_proxy_url = ['/ink_club'];

@@ -1,5 +1,5 @@
 let gulp = require('gulp'),
-	config = require('../../config.js'),
+	config = require('../../../config/config.js'),
 	Replace = require('gulp-replace'),
 	If = require('gulp-if'),
 	gulpRevAll = require('gulp-rev-all');
@@ -9,13 +9,13 @@ let {
 } = process.env;
 // 加MD5戳
 gulp.task('revision', function() { //
-	return gulp.src([config.dest + 'sce/app/static/img/**', config.dest + 'sce/app/view/*.html'], {
-			base: config.dest + 'sce/app'
+	return gulp.src([config.dist + 'sce/app/static/img/**', config.dist + 'sce/app/view/*.html'], {
+			base: config.dist + 'sce/app'
 		})
 		.pipe(gulpRevAll.revision({
 			dontRenameFile: [/.*\.html/],
 			hashLength: 4
 		}))
 		// .pipe(If(CDN === 'true', Replace(/"[./]*static\//g, '"' + config.cdnPath)))
-		.pipe(gulp.dest(config.dest + 'sce/app'))
+		.pipe(gulp.dest(config.dist + 'sce/app'))
 });

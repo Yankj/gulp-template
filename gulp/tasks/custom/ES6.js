@@ -1,5 +1,5 @@
 let gulp = require('gulp'),
-	config = require('../../config.js'),
+	config = require('../../../config/config.js'),
 	babel = require('gulp-babel');
 
 let {
@@ -7,10 +7,7 @@ let {
 } = process.env;
 
 gulp.task('ES6', function() {
-	return gulp.src([config.src + 'static/es6/**/*', '!' + config.src + 'static/es6/**/*.min.js'])
-	pipe({
-
-		})
+	return gulp.src([config.src + 'static/es6/**/*', '!' + config.src + 'static/es6/lib/*.js'])
 		.pipe(babel({
 			presets: [
 				['env', {
@@ -24,5 +21,5 @@ gulp.task('ES6', function() {
 			]
 			// plugins: ['transform-runtime']
 		}))
-		.pipe(gulp.dest(config.src + 'static/js'))
+		.pipe(gulp.dest(config.temp + 'static/js'))
 });

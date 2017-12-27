@@ -1,14 +1,20 @@
 let config = {
-	src: 'app/',
+	src: 'src/',
+	temp: 'temp/',
 	startPath: '/view/index.html', //自行修改
-	dest: 'dist/',
+	dist: 'dist/',
 	cdnPath: '//ink_wf.cdn.sohusce.com/club-h5/', //自行修改
 	sce: {
 		manageUrl: '//console.sce.sohuno.com/apps/versions?appid=',
-		path: 'sce/',
-		yamlPath: 'sce/app.yaml',
-		appPath: 'sce/app/',
-		confPath: 'sce/conf/',
+		path: 'config/sce/',
+		yamlPath: 'config/sce/app.yaml',
+		appPath: 'config/sce/app/',
+		confPath: 'config/sce/conf/',
+		dev: {
+			proxyTable: {
+				backend1: 'ink-club-test.sce.sohuno.com', //自行修改
+			}
+		},
 		test: {
 			appId: 918901818, //自行修改
 			appToken: '3f592aea565b2b738e11d9ee6eacf485', //自行修改

@@ -94,7 +94,7 @@ console.log(Array.from(arrayLike));
 // 可解决中文算两个长度bug
 function countSymbols(string) {
 	return Array.from(string).length;
-}
+};
 console.log('风之化身.length=', countSymbols('风之化身')); //4
 // Array.of  将所传参数转为数组
 Array.of(3, 11, 8); // [3, 11, 8]
@@ -123,7 +123,7 @@ function timeout(ms) {
 	return new Promise(function (resolve) {
 		setTimeout(resolve, ms);
 	});
-}
-
+};
+;
 asyncPrint('hello world', 5000); //这里非阻塞
 console.log('你好啊');
