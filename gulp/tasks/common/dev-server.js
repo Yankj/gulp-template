@@ -5,7 +5,7 @@ let gulp = require('gulp'),
 	proxyMiddleware = require('http-proxy-middleware');
 
 let env = process.env.NODE_ENV,
-	serverPath = env == 'product' ? config.dist : config.src;
+	serverPath = env == 'product' ? config.dist : config.temp;
 
 gulp.task('dev-server', function(cb) {
 	let need_proxy_url = ['/ink_club'];
@@ -35,7 +35,7 @@ gulp.task('dev-server', function(cb) {
 		// port: 80,
 		middleware: [proxy1, proxyNoCache]
 	});
-	gulp.watch(config.src + "/static/scss/*.scss", ['sass'], ['cssSprite']);
+	gulp.watch(config.src + "/static/scss/*.scss", ['sass'], ['px2rem']);
 	gulp.watch(config.src + "/static/es6/**/*.js", ['ES6']);
 	gulp.watch([config.src + "/static/js/**",
 		config.src + "/static/css/**",
