@@ -3,5 +3,5 @@ let gulp = require('gulp'),
 	del = require('del');
 
 gulp.task('delRedundant', function() {
-	return del([config.dist + 'sce/app/static/img/*.{png,jpg}', '!' + config.dist + 'sce/app/static/img/*.*.{png,jpg}']);
+	return del([config.dist + 'sce/app/static/img/*.{png,jpg}', '!' + config.dist + 'sce/app/static/img/*.*.{png,jpg}', '!' + config.dist + 'sce/app/static/img/sprite.png']);
 });

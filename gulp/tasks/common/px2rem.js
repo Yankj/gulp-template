@@ -2,7 +2,7 @@ let gulp = require('gulp'),
 	config = require('../../../config/config.js'),
 	px2rem = require('gulp-px2rem-plugin');
 
-gulp.task('px2rem', ['cssSprite'], function() {
+gulp.task('px2rem', function() {
 	return gulp.src(config.temp + 'static/css/main.css')
 		// .pipe(px2rem())
 		.pipe(px2rem({

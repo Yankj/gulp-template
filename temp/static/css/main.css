@@ -1,46 +1,44 @@
 .icon {
-	margin-right: .07rem;
-	width: .21rem;
-	height: .21rem;
-	background-size: 1.08rem 1.00rem !important;
-	display: inline-block;
-}
+  margin-right: .07rem;
+  width: .21rem;
+  height: .21rem;
+  display: inline-block; }
 
 .icon-home {
-	background: url(../img/spritesheet.png);
-	background-position: -0px -0.39rem;
-}
+  background-image: url("../img/sprite.png");
+    background-position: -0px -0px;
+    background-size: 2.31rem 0.39rem!important; }
 
 .icon-location {
-	background: url(../img/spritesheet.png);
-	background-position: -0.31rem -0.39rem;
-}
+  background-image: url("../img/sprite.png");
+    background-position: -0.31rem -0px;
+    background-size: 2.31rem 0.39rem!important; }
 
 .icon-school {
-	background: url(../img/spritesheet.png);
-	background-position: -0.77rem -0px;
-}
+  background-image: url("../img/sprite.png");
+    background-position: -0.61rem -0px;
+    background-size: 2.31rem 0.39rem!important; }
 
 .icon-girl {
-	background: url(../img/spritesheet.png);
-	background-position: -0px -0px;
-	width: .3rem;
-	height: .3rem;
-}
+  background-image: url("../img/sprite.png");
+    background-position: -1.53rem -0px;
+    background-size: 2.31rem 0.39rem!important;
+  width: .3rem;
+  height: .3rem; }
 
 .icon-boy {
-	background: url(../img/spritesheet.png);
-	background-position: -0.39rem -0px;
-	width: .3rem;
-	height: .3rem;
-}
+  background-image: url("../img/sprite.png");
+    background-position: -1.92rem -0px;
+    background-size: 2.31rem 0.39rem!important;
+  width: .3rem;
+  height: .3rem; }
 
 .icon-job {
-	background: url(../img/spritesheet.png);
-	background-position: -0.77rem -0.31rem;
-}
+  background-image: url("../img/sprite.png");
+    background-position: -0.92rem -0px;
+    background-size: 2.31rem 0.39rem!important; }
 
 .icon-business {
-	background: url(../img/spritesheet.png);
-	background-position: -0px -0.69rem;
-}
+  background-image: url("../img/sprite.png");
+    background-position: -1.23rem -0px;
+    background-size: 2.31rem 0.39rem!important; }

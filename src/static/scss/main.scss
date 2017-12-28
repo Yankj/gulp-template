@@ -1,39 +1,38 @@
 .icon {
 	margin-right: .07rem;
 	width: .21rem;
-	height: .21rem;
-	background-size: 81px 75px !important; // background-size: 100% 100% !important;
+	height: .21rem; // background-size: 81px 75px !important; // background-size: 100% 100% !important;
 	display: inline-block;
 }
 
 .icon-home {
-	background: url(../img/home.png);
+	background-image: url(../img/home.png);
 }
 
 .icon-location {
-	background: url(../img/location.png);
+	background-image: url(../img/location.png);
 }
 
 .icon-school {
-	background: url(../img/school.png);
+	background-image: url(../img/school.png);
 }
 
 .icon-girl {
-	background: url(../img/girl.png);
+	background-image: url(../img/girl.png);
 	width: .3rem;
 	height: .3rem;
 }
 
 .icon-boy {
-	background: url(../img/boy.png);
+	background-image: url(../img/boy.png);
 	width: .3rem;
 	height: .3rem;
 }
 
 .icon-job {
-	background: url(../img/job.png);
+	background-image: url(../img/job.png);
 }
 
 .icon-business {
-	background: url(../img/business.png);
+	background-image: url(../img/business.png);
 }
