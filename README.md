@@ -13,6 +13,24 @@
 + 本地开发，实时刷新
 + 更多...(提取关键CSS，CSS异步加载等)
 
+## 注意点
++ uncss无法监听到js文件中动态添加的类名，所以当js文件操作了类名A，同时不希望uncss删掉A，需要在uncss中配置ignore选项，如：
+
+```javascript
+gulp.task('default', function () {
+    return gulp.src('styles/**/*.scss')
+        .pipe(sass())
+        .pipe(concat('main.css'))
+        .pipe(uncss({
+            html: ['index.html', 'posts/**/*.html', 'http://example.com'],
+            ignore:['.A']
+        }))
+        .pipe(nano())
+        .pipe(gulp.dest('./out'));
+});
+```
++ 本模板默认只有js、css、img三种静态资源，如需添加新资源，如font等，请修改copyStaticToTemp和copyStaticToDist任务
+
 ## 使用方式：
 ```javascript
 //0、安装依赖
@@ -35,5 +53,3 @@ let gulpRevAll=require('gulp-rev-all');// 不要这样 revAll=require('gulp-rev-
 
 ## Help
 @冯银超(yinchaofeng@sohu-inc.com)
-
-https://github.com/wizardforcel/markdown-simple-world/blob/master/1.md
