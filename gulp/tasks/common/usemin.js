@@ -1,29 +1,27 @@
 let gulp = require('gulp'),
 	config = require('../../../config/config.js'),
-	cleanCSS = require('gulp-clean-css'),
-	htmlmin = require('gulp-htmlmin'),
-	uglify = require('gulp-uglify'),
-	revAll = require('gulp-rev-all'),
-	usemin = require('gulp-usemin'),
-	plumber = require('gulp-plumber'), //错误自启动
-	newer = require('gulp-newer'), //增量更新
-	logger = require('gulp-logger'); //打印增量内容
+	gulpCleanCSS = require('gulp-clean-css'),
+	gulphHtmlmin = require('gulp-htmlmin'),
+	gulpUglify = require('gulp-uglify'),
+	gulpRevAll = require('gulp-rev-all'),
+	gulpUsemin = require('gulp-usemin'),
+	gulpPlumber = require('gulp-plumber'); //错误自启动
 
 let errorHandler = require('../../util.js');
 gulp.task('usemin', function() { //
 	return gulp.src(config.temp + 'view/index.html', {
 			base: config.temp
 		})
-		.pipe(usemin({
+		.pipe(gulpUsemin({
 			css: [
-				cleanCSS(),
-				revAll.revision({
+				gulpCleanCSS(),
+				gulpRevAll.revision({
 					hashLength: 4
 				})
 			],
 			js: [
-				plumber(errorHandler),
-				uglify({
+				gulpPlumber(errorHandler),
+				gulpUglify({
 					compress: {
 						drop_console: true
 					},
@@ -31,13 +29,13 @@ gulp.task('usemin', function() { //
 						defer: true
 					}
 				}),
-				revAll.revision({
+				gulpRevAll.revision({
 					hashLength: 4
 				})
 			],
 			html: [
-				plumber(errorHandler),
-				htmlmin({
+				gulpPlumber(errorHandler),
+				gulphHtmlmin({
 					collapseWhitespace: true,
 					removeComments: true,
 					minifyJS: true,

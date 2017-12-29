@@ -26,5 +26,14 @@ npm run build-product               //静态资源不放CDN
 npm run build-product-cdn         //静态资源放CDN
 ```
 
+## 维护须知
++ 新增gulp任务时，引入的插件名请遵循驼峰式结构，且使用gulp插件的全称形式，如gulp-rev-all，应该取名
+
+```javascript
+let gulpRevAll=require('gulp-rev-all');// 不要这样 revAll=require('gulp-rev-all');
+```
+
 ## Help
 @冯银超(yinchaofeng@sohu-inc.com)
+
+https://github.com/wizardforcel/markdown-simple-world/blob/master/1.md

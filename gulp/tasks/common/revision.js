@@ -1,7 +1,5 @@
 let gulp = require('gulp'),
 	config = require('../../../config/config.js'),
-	Replace = require('gulp-replace'),
-	If = require('gulp-if'),
 	gulpRevAll = require('gulp-rev-all');
 
 let {

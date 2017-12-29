@@ -1,11 +1,11 @@
 var gulp = require('gulp'),
 	config = require('../../../config/config.js'),
-	marked = require('gulp-marked');
+	gulpMarked = require('gulp-marked');
 
 
 gulp.task('markdown2html', function() {
 	return gulp.src(config.src + 'view/*.md')
-		.pipe(marked({
+		.pipe(gulpMarked({
 			highlight: function(code) {
 				return require('highlight.js').highlightAuto(code).value;
 			},

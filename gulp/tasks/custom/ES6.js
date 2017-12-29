@@ -1,6 +1,6 @@
 let gulp = require('gulp'),
 	config = require('../../../config/config.js'),
-	babel = require('gulp-babel');
+	gulpBabel = require('gulp-babel');
 
 let {
 	NODE_ENV
@@ -8,7 +8,7 @@ let {
 
 gulp.task('ES6', function() {
 	return gulp.src([config.src + 'static/es6/**/*', '!' + config.src + 'static/es6/lib/*.js'])
-		.pipe(babel({
+		.pipe(gulpBabel({
 			presets: [
 				['env', {
 					"targets": {

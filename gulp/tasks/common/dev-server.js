@@ -2,14 +2,14 @@ let gulp = require('gulp'),
 	Util = require('../../util.js'),
 	config = require('../../../config/config.js'),
 	browserSync = require('browser-sync').create(),
-	proxyMiddleware = require('http-proxy-middleware');
+	httpProxyMiddleware = require('http-proxy-middleware');
 
 let env = process.env.NODE_ENV,
 	serverPath = env == 'product' ? config.dist : config.temp;
 
 gulp.task('dev-server', function(cb) {
 	let need_proxy_url = ['/ink_club'];
-	let proxy1 = proxyMiddleware(need_proxy_url, {
+	let proxy1 = httpProxyMiddleware(need_proxy_url, {
 		target: 'http://' + config.sce[env].proxyTable.backend1, //注意http(https)
 		changeOrigin: true,
 		headers: {
