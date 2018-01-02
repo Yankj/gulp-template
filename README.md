@@ -6,6 +6,8 @@
 + Babel编译，ES6支持
 + eslint检查
 + CSS雪碧图
++ 图片压缩
++ 文件组合(file-include)
 + 统一 npm scripts 脚本命令
 + HTML、JS、CSS合并压缩，JS自动defer
 + 静态资源(JS,CSS,Image)加MD5戳防缓存
