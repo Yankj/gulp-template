@@ -12,7 +12,7 @@ let gulp = require('gulp'),
 gulp.task('cssSprite', function() {
 	var spriteOutput;
 
-	spriteOutput = gulp.src(config.temp + 'static/css/main.css')
+	spriteOutput = gulp.src(config.temp + 'static/css/index.css')
 		.pipe(gulpSpriteGenerator({
 			baseUrl: '../img',
 			spriteSheetPath: '../img',

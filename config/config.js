@@ -1,8 +1,10 @@
 let config = {
 	src: 'src/',
 	temp: 'temp/',
-	startPath: '/view/index.html', //自行修改
 	dist: 'dist/',
+	startPath: '/view/index.html', //自行修改
+	buryPointSwitch: false, //是否埋点
+	isImgOptmize: false, //是否开启图片压缩
 	cdnPath: '//ink_wf.cdn.sohusce.com/club-h5/', //自行修改
 	sce: {
 		manageUrl: '//console.sce.sohuno.com/apps/versions?appid=',

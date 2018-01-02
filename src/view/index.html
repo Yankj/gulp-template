@@ -10,9 +10,7 @@
     <meta http-equiv="cache-control" content="no-store, must-revalidate" />
     <meta http-equiv="expires" content="0" />
     <title>搜狐墨客</title>
-    <!-- build:css ../static/css/main.css-->
-    <link rel="stylesheet" href="../static/css/main.css">
-    <!-- endbuild -->
+    @@include('../static/template/common-css.html')
     <script>
     (window.onresize = function() {
         var clientWidth = document.documentElement.clientWidth < 500 ? document.documentElement.clientWidth : 500;
@@ -35,10 +33,7 @@
     <!-- build:js ../static/js/test.js-->
     <script src='../static/js/test-es6.js'></script>
     <!-- endbuild -->
-    <!-- build:remove -->
-    <!-- <script src='../static/js/vconsole.min.js'></script> -->
-    <!-- <script src='../static/js/vconsole-elements.min.js'></script> -->
-    <!-- endbuild -->
+    @@if (env === 'test') { @@include('../static/template/vconsole.html') } @@if(buryPointSwitch==='true'){ @@if (env === 'test'){@@include('../static/template/common-js-test.html') } @@if(env==='product') { @@include('../static/template/common-js-product.html') } }
 </body>
 
 </html>

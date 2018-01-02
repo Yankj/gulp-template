@@ -18,7 +18,7 @@ if (env !== 'dev') {
 	console.log('\n\n/***********************    打包开始，当前环境为：' + chalk.blue.bold(env) + '    ***********************/' + '\n');
 }
 gulp.task('build', function(cb) { //默认不放 CDN
-	runSequence(['delDist', 'sass', 'eslint', 'ES6', 'imgMin', 'copyStaticToTemp'], ['cssSprite'], ['px2rem'], ['usemin', 'sceConfig', 'copyStaticToDist'], ['revision'], ['cdnPre'], ['delRedundant'], ['zip'], function() {
+	runSequence(['delDist', 'sass', 'eslint', 'ES6', 'imgMin', 'fileInclude'], ['cssSprite'], ['px2rem'], ['usemin', 'sceConfig', 'copyStaticToDist'], ['revision'], ['cdnPre'], ['delRedundant'], ['zip'], function() {
 
 		console.log('● 前端项目已发布到' + config.dist);
 		if (cdn === 'true') console.log('○ 静态资源zip请上传至：' + config.cdnPath);
@@ -29,5 +29,5 @@ gulp.task('build', function(cb) { //默认不放 CDN
 })
 
 gulp.task('dev', function(cb) {
-	runSequence(['sass', 'eslint', 'ES6'], ['px2rem'], ['dev-server'], cb);
+	runSequence(['sass', 'eslint', 'ES6', 'imgMin', 'fileInclude'], ['cssSprite'], ['px2rem'], ['dev-server'], cb);
 });

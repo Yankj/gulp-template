@@ -16,7 +16,8 @@ gulp.task('sass', function() {
 		.pipe(gulpAutoprefixer())
 		.pipe(gulpSass())
 		.pipe(gulpUncss({
-			html: [config.src + 'view/**/*.html']
+			html: [config.src + 'view/**/*.html'],
+			ignore: ['.test']
 		}))
 		.pipe(gulpNewer(config.src + "/static/css"))
 		.pipe(gulpLogger({

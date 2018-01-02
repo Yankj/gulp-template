@@ -3,7 +3,7 @@ let gulp = require('gulp'),
 	gulpPx2remPlugin = require('gulp-px2rem-plugin');
 
 gulp.task('px2rem', function() {
-	return gulp.src(config.temp + 'static/css/main.css')
+	return gulp.src(config.temp + 'static/css/index.css')
 		// .pipe(px2rem())
 		.pipe(gulpPx2remPlugin({
 			'width_design': 750,

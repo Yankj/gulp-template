@@ -1,3 +1,20 @@
+html,
+body,
+div,
+img,
+i {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+
+body {
+  line-height: 1; }
+
 .icon {
   margin-right: .07rem;
   width: .21rem;
