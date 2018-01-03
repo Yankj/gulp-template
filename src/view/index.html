@@ -10,7 +10,7 @@
     <meta http-equiv="cache-control" content="no-store, must-revalidate" />
     <meta http-equiv="expires" content="0" />
     <title>搜狐墨客</title>
-    @@include('../static/template/common-css.html')
+    @@include('../static/template/common/css.html')
     <script>
     (window.onresize = function() {
         var clientWidth = document.documentElement.clientWidth < 500 ? document.documentElement.clientWidth : 500;
@@ -22,18 +22,12 @@
 <body>
     <div id="content">
     </div>
-    <i class="icon icon-home"></i>
-    <i class="icon icon-business"></i>
-    <i class="icon icon-job"></i>
-    <i class="icon icon-school"></i>
-    <i class="icon icon-location"></i>
-    <i class="icon icon-boy"></i>
-    <i class="icon icon-girl"></i>
-    <img src="../static/img/boy.png" alt="">
-    <!-- build:js ../static/js/test.js-->
-    <script src='../static/js/test-es6.js'></script>
-    <!-- endbuild -->
-    @@if (env === 'test') { @@include('../static/template/vconsole.html') } @@if(buryPointSwitch==='true'){ @@if (env === 'test'){@@include('../static/template/common-js-test.html') } @@if(env==='product') { @@include('../static/template/common-js-product.html') } }
+    <script src="../static/js/lib/zepto.min.js"></script>
+    <script src="../static/js/lib/doT.min.js"></script>
+    <!-- 在 test 环境会引入vconsole调试工具 -->
+    @@if (env === 'test') { @@include('../static/template/common/vconsole.html') }
+    <!-- 当开启config.js中埋点开关时会引入埋点脚本  -->
+    @@if(buryPointSwitch==='true'){ @@if (env === 'test'){@@include('../static/template/common/mixpanel-test.html') } @@if(env==='product') { @@include('../static/template/common/mixpanel-product.html') } }
 </body>
 
 </html>
