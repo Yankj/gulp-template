@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-store, must-revalidate" />
+    <meta http-equiv="expires" content="0" />
+    <title>搜狐墨客</title>
+    @@include('../static/template/common/css.html')
+    <script>
+    (window.onresize = function() {
+        var clientWidth = document.documentElement.clientWidth < 500 ? document.documentElement.clientWidth : 500;
+        document.documentElement.style.fontSize = clientWidth / 7.5 + 'px';
+    })()
+    </script>
+</head>
+
+<body>
+    <div id="content">
+    </div>
+    <script src="../static/js/lib/zepto.min.js"></script>
+    <script src="../static/js/lib/doT.min.js"></script>
+    <!-- 在 test 环境会引入vconsole调试工具 -->
+    @@if (env === 'test') { @@include('../static/template/common/vconsole.html') }
+    <!-- 当开启config.js中埋点开关时会引入埋点脚本  -->
+    @@if(buryPointSwitch==='true'){ @@if (env === 'test'){@@include('../static/template/common/mixpanel-test.html') } @@if(env==='product') { @@include('../static/template/common/mixpanel-product.html') } }
+</body>
+
+</html>
