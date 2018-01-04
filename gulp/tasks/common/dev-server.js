@@ -38,6 +38,7 @@ gulp.task('dev-server', function(cb) {
 	gulp.watch(config.src + "/static/scss/*.scss", ['sass'], ['px2rem']);
 	gulp.watch(config.src + "/static/es6/**/*.js", ['ES6']);
 	gulp.watch(config.src + "/static/img/**", ['imgMin']);
+	gulp.watch(config.src + "/**/*.html", ['fileInclude']);
 	gulp.watch([config.src + "/static/js/**",
 		config.temp + "/static/css/**",
 		config.temp + "/static/img/**",
