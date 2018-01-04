@@ -11,15 +11,15 @@ let gulp = require('gulp'),
 let errorHandler = require('../../util.js');
 
 gulp.task('sass', function() {
-	return gulp.src(config.src + "/static/scss/*.scss")
+	return gulp.src(config.src + "/static/scss/**/*.scss")
 		.pipe(gulpPlumber(errorHandler))
 		.pipe(gulpAutoprefixer())
 		.pipe(gulpSass())
-		.pipe(gulpUncss({
-			html: [config.src + 'view/**/*.html'],
-			ignore: ['.test']
-		}))
-		.pipe(gulpNewer(config.src + "/static/css"))
+		// .pipe(gulpUncss({
+		// 	html: [config.temp + 'view/**/*.html'],
+		// 	ignore: ['.test']
+		// }))
+		// .pipe(gulpNewer(config.temp + "/static/css"))
 		.pipe(gulpLogger({
 			showChange: true
 		}))

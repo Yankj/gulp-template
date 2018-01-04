@@ -9,11 +9,13 @@
     <meta http-equiv="pragma" content="no-cache" />
     <meta http-equiv="cache-control" content="no-store, must-revalidate" />
     <meta http-equiv="expires" content="0" />
-    <title>搜狐墨客</title>
-    <!-- build:css ../static/css/index.css-->
-<link rel="stylesheet" href="../static/css/index.css">
-<!-- endbuild -->
+    <title>搜狐</title>
+    <link rel="stylesheet" href="../static/css/base.css">
+<link rel="stylesheet" href="../static/css/common.css">
+    <link rel="stylesheet" href="../static/css/index.css">
     <script>
+        //狐友夜间模式
+    if (location.search.indexOf("mode=1") >= 0) document.documentElement.className = "night";
     (window.onresize = function() {
         var clientWidth = document.documentElement.clientWidth < 500 ? document.documentElement.clientWidth : 500;
         document.documentElement.style.fontSize = clientWidth / 7.5 + 'px';
@@ -21,22 +23,25 @@
     </script>
 </head>
 
+<h5 class="h1">h1标题</h5>
+<h2 class="h2">h2标题</h2>
+<h2 class="h3">h3标题</h2>
+<button type="button" class="btn">Button</button>
+
+
+
+
 <body>
     <div id="content">
     </div>
-    <i class="icon icon-home"></i>
-    <i class="icon icon-business"></i>
-    <i class="icon icon-job"></i>
-    <i class="icon icon-school"></i>
-    <i class="icon icon-location"></i>
-    <i class="icon icon-boy"></i>
-    <i class="icon icon-girl"></i>
-    <img src="../static/img/boy.png" alt="">
-    <!-- build:js ../static/js/test.js-->
-    <script src='../static/js/test-es6.js'></script>
-    <!-- endbuild -->
-     <script src='../static/js/vconsole.min.js'></script>
-<script src='../static/js/vconsole-elements.min.js'></script>  
+    <script src="../static/js/lib/zepto.min.js"></script>
+    <script src="../static/js/lib/doT.min.js"></script>
+    <!-- 在 test 环境会引入vconsole调试工具 -->
+     <script src='../static/js/lib/vconsole.min.js'></script>
+<script src='../static/js/lib/vconsole-elements.min.js'></script>
+<script src='../static/js/lib/vconsole-resources.min.js'></script> 
+    <!-- 当开启config.js中埋点开关时会引入埋点脚本  -->
+    
 </body>
 
 </html>

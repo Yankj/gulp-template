@@ -2,7 +2,8 @@ let gulp = require('gulp'),
 	Util = require('../../util.js'),
 	config = require('../../../config/config.js'),
 	browserSync = require('browser-sync').create(),
-	httpProxyMiddleware = require('http-proxy-middleware');
+	httpProxyMiddleware = require('http-proxy-middleware'),
+    runSequence = require('run-sequence');
 
 let env = process.env.NODE_ENV,
 	serverPath = env == 'product' ? config.dist : config.temp;
@@ -35,11 +36,15 @@ gulp.task('dev-server', function(cb) {
 		// port: 80,
 		middleware: [proxy1, proxyNoCache]
 	});
-	gulp.watch(config.src + "/static/scss/*.scss", ['sass'], ['px2rem']);
+	gulp.watch(config.src + "/static/scss/**/*.scss").on('change',function () {
+        runSequence(['sass'], ['px2rem']);
+    });
 	gulp.watch(config.src + "/static/es6/**/*.js", ['ES6']);
+	gulp.watch(config.src + "/static/img/**", ['imgMin']);
+	gulp.watch(config.src + "/**/*.html", ['fileInclude']);
 	gulp.watch([config.src + "/static/js/**",
-		config.src + "/static/css/**",
-		config.src + "/static/img/**",
-		config.src + "/**/*.html"
+		config.temp + "/static/img/**",
+		config.temp + "/static/css/**",
+		config.temp + "/**/*.html"
 	]).on('change', browserSync.reload);
 })

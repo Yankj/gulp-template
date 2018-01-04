@@ -54,4 +54,3 @@ let gulpRevAll=require('gulp-rev-all');// 不要这样 revAll=require('gulp-rev-
 ```
 
 ## Help
-@冯银超(yinchaofeng@sohu-inc.com)

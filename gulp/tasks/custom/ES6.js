@@ -7,7 +7,7 @@ let {
 } = process.env;
 
 gulp.task('ES6', function() {
-	return gulp.src([config.src + 'static/es6/**/*', '!' + config.src + 'static/es6/lib/*.js'])
+	return gulp.src([config.src + 'static/es6/**/*'])
 		.pipe(gulpBabel({
 			presets: [
 				['env', {
