@@ -39,8 +39,8 @@ gulp.task('dev-server', function(cb) {
 	gulp.watch(config.src + "/static/es6/**/*.js", ['ES6']);
 	gulp.watch(config.src + "/static/img/**", ['imgMin']);
 	gulp.watch([config.src + "/static/js/**",
-		config.src + "/static/css/**",
-		config.src + "/static/img/**",
-		config.src + "/**/*.html"
+		config.temp + "/static/css/**",
+		config.temp + "/static/img/**",
+		config.temp + "/**/*.html"
 	]).on('change', browserSync.reload);
 })
