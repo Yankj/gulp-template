@@ -16,10 +16,10 @@ gulp.task('sass', function() {
 		.pipe(gulpAutoprefixer())
 		.pipe(gulpSass())
 		.pipe(gulpUncss({
-			html: [config.src + 'view/**/*.html'],
+			html: [config.temp + 'view/**/*.html'],
 			ignore: ['.test']
 		}))
-		.pipe(gulpNewer(config.src + "/static/css"))
+		.pipe(gulpNewer(config.temp + "/static/css"))
 		.pipe(gulpLogger({
 			showChange: true
 		}))
