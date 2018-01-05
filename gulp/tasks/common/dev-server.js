@@ -10,6 +10,7 @@ let env = process.env.NODE_ENV,
 
 gulp.task('dev-server', function(cb) {
 	let need_proxy_url = ['/ink_club'];
+	console.log(env,12345);
 	let proxy1 = httpProxyMiddleware(need_proxy_url, {
 		target: 'http://' + config.sce[env].proxyTable.backend1, //注意http(https)
 		changeOrigin: true,
