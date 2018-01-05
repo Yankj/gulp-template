@@ -2,6 +2,7 @@ let config = {
 	src: 'src/',
 	temp: 'temp/',
 	dist: 'dist/',
+    devHost: 'dev.w.sohu.com',
 	startPath: '/view/index.html', //自行修改
 	buryPointSwitch: false, //是否埋点
 	isImgOptmize: false, //是否开启图片压缩

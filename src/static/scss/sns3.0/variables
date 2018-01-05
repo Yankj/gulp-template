@@ -1,0 +1,71 @@
+//搜狐狐友3.0主色调
+
+$yellow1: #FDD536;
+$yellow2: #FFBC2F;
+$yellow3: #D9A815;
+
+$red1: #EE2F10;
+$red2: #FF644B;
+$red3: #ED5D49;
+
+$blue1: #3D5699;
+$blue2: #3B87F9;
+
+$black1: #000;
+$black2: #161616;
+$black3: #3A3A3A;
+$black4: #454545;
+$black5: #929292;
+$black6: #B1B1B1;
+$black7: #DADADA;
+$black8: #E4E4E4;
+$black9: #F1F1F1;
+$black10: #F1F2F2;
+$black11: #FFF;
+
+$night: (
+        #FDD536: #7F5D17,
+        #FFBC2F: #7E6A1A,
+        #D9A815: #5C430F,
+        #EE2F10:#6E2A2A,
+        #FF644B:#7F3125,
+        #ED5D49:#762E24,
+        #3D5699:#374669,
+        #3B87F9:#1D437C,
+        #000:#7A7A7A,
+        #161616:#6E6E6E,
+        #3A3A3A:#5A3A3A,
+        #454545:#707070,
+        #929292:#606060,
+        #B1B1B1:#4E4E4E,
+        #DADADA:#343434,
+        #E4E4E4:#313131,
+        #F1F1F1:#2A2A2A,
+        #F1F2F2: #2E2E2E,
+        #FFF:#232323
+);
+
+//夜间颜色
+
+$yellow1-night: #7F5D17;
+$yellow2-night: #7E6A1A;
+$yellow3-night: #5C430F;
+
+$red1-night: #6E2A2A;
+$red2-night: #7F3125;
+$red3-night: #762E24;
+
+$blue1-night: #374669;
+$blue2-night: #1D437C;
+
+$black1-night: #7A7A7A;
+$black2-night: #6E6E6E;
+$black3-night: #5A3A3A;
+$black4-night: #707070;
+$black5-night: #606060;
+$black6-night: #4E4E4E;
+$black7-night: #343434;
+$black8-night: #313131;
+$black9-night: #2A2A2A;
+$black10-night: #2E2E2E;
+$black11-night: #232323;

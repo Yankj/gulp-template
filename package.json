@@ -5,10 +5,10 @@
   "author": "yankj",
   "scripts": {
     "dev": "cross-env-shell NODE_ENV=dev CDN=false gulp dev",
-    "build-test": "set NODE_ENV=test&& set CDN=false&& gulp build",
-    "build-staging": "set NODE_ENV=staging&& set CDN=false&& gulp build",
-    "build-product": "set NODE_ENV=product&& set CDN=false&& gulp build",
-    "build-product-cdn": "set NODE_ENV=product&& set CDN=true&& gulp build"
+    "build-test": "cross-env-shell NODE_ENV=test CDN=false gulp build",
+    "build-staging": "cross-env-shell NODE_ENV=staging CDN=false gulp build",
+    "build-product": "cross-env-shell NODE_ENV=product CDN=false gulp build",
+    "build-product-cdn": "cross-env-shell NODE_ENV=product CDN=true gulp build"
   },
   "dependencies": {},
   "devDependencies": {
