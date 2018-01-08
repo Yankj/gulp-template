@@ -1,0 +1,9 @@
+@mixin size($width: 168px,$height: 88px){
+  width: $width;
+  height: $height;
+}
+
+@mixin font($fz: 14px){
+  font-size: $fz;
+}
+

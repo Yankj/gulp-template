@@ -29,5 +29,5 @@ gulp.task('build', function(cb) { //默认不放 CDN
 })
 
 gulp.task('dev', function(cb) {
-	runSequence(['fileInclude', 'eslint', 'ES6', 'imgMin'], ['sass'], ['cssSprite'], ['px2rem'], ['dev-server'], cb);
+	runSequence(['delDist','fileInclude', 'eslint', 'ES6', 'imgMin'], ['sass'], ['cssSprite'], ['px2rem'], ['dev-server'], cb);
 });

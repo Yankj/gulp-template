@@ -1,68 +1,134 @@
 @import "variables";
 @import "mixins";
+@import "extends";
 
-body{
-  @at-root .night &{
-    background-color: $black1-night;
+body {
+  background-color: $c-black11;
+}
+
+
+//Button
+
+//块按钮
+$buttonMap: (
+        block: (//v1
+                yellow:(//v2
+                        1 : (//v3
+                                width : 96px,
+                                height: 52px,
+                                fontSize: 28px
+                        ),
+                        2:(
+                                width : 164px,
+                                height: 88px,
+                                fontSize: 36px
+                        ),
+                        3:(
+                                width : 520px,
+                                height: 88px,
+                                fontSize: 36px
+                        ),
+                        6:(
+                                width : 520px,
+                                height: 88px,
+                                fontSize: 36px
+                        )
+                ),
+                red:(
+                        5:(
+                                width : 520px,
+                                height: 88px,
+                                fontSize: 36px
+                        )
+                ),
+                transparent:(
+                        4:(
+                                width : 520px,
+                                height: 88px,
+                                fontSize: 36px
+                        )
+                )
+        ),
+        line:(
+                yellow:(
+                        1:(
+                                width : 88px,
+                                height: 48px,
+                                fontSize: 24px
+                        ),
+                        4:(
+                                width : 244px,
+                                height: 52px,
+                                fontSize: 28px
+                        ),
+                        5:(
+                                width : 520px,
+                                height: 72px,
+                                fontSize: 36px
+                        ),
+                        7:(
+                                width : 694px,
+                                height: 71px,
+                                fontSize: 36px
+                        ),
+                ),
+                black:(
+                        2:(
+                                width : 88px,
+                                height: 48px,
+                                fontSize: 24px
+                        ),
+                        6:(
+                                width : 520px,
+                                height: 72px,
+                                fontSize: 36px
+                        ),
+                        8:(
+                                width : 694px,
+                                height: 71px,
+                                fontSize: 36px
+                        )
+                ),
+                transparent:(
+                        3:(
+                                width : 88px,
+                                height: 48px,
+                                fontSize: 24px
+                        )
+                )
+        )
+);
+
+@each $k1, $v1 in $buttonMap {
+  @each $k2, $v2 in $v1 {
+    @each $k3, $v3 in $v2 {
+      @if $k1==block {
+        .u-btn#{$k3} {
+          @extend .btn;
+          @extend .block-btn-#{$k2};
+          @include size(map-get($v3, width), map-get($v3, height));
+          @include font(map-get($v3, fontSize));
+        }
+      } @else {
+        .u-line-btn#{$k3} {
+          @extend .btn;
+          @extend .line-btn-#{$k2};
+          @include size(map-get($v3, width), map-get($v3, height));
+          @include font(map-get($v3, fontSize));
+        }
+      }
+
+    }
   }
 }
 
-.h1, h1 {
-  font-size: 96px;
-}
-.h2, h2 {
-  font-size: 44px;
-}
-.h3, h3 {
-  font-size: 40px;
-}
-.h4, h4 {
-  font-size: 36px;
-}
-.h5, h5 {
-  font-size: 32px;
-}
-.h6, h6 {
-  font-size: 32px;
+
+$fontSizeArr : (96,44,40,36,32,30,28,26,24,22,20,18);
+
+@each $k in $fontSizeArr {
+  .s-fz#{$k} {
+    @include font($k + px);
+  }
 }
 
-//Button
-.btn{
-  display: inline-block;
-  touch-action: manipulation;
-  cursor: pointer;
-  user-select: none;
-  background-image: none;
-  outline: none;
-  border: none;
-  white-space: nowrap;
-  vertical-align: middle;
-  background: none;
-  text-align: center;
-  font-weight:normal;
-}
-
-.btn1,.btn2{
-  @extend .btn;
-}
-
-.btn1,.btn2{
-  @extend .btn;
-}
-
-.line-btn1{
-
-}
-
-.btn1{
-  background-color: $yellow1;
-  font-size: 28px;
-}
-
-.btn2{
-  height: 88px;
-  width: 164px;
-  font-size: 36px;
-  @include button-variant($black1,$yellow1,$black11)
-}
 

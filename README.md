@@ -53,4 +53,9 @@ npm run build-product-cdn         //静态资源放CDN
 let gulpRevAll=require('gulp-rev-all');// 不要这样 revAll=require('gulp-rev-all');
 ```
 
+## Else
+sns分支在@冯银超同学的基础上做了些改动以适应sns业务
+
 ## Help
+@冯银超(yinchaofeng@sohu-inc.com)
+@严焜杰(kunjieyan@sohu-inc.com)

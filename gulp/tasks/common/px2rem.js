@@ -4,7 +4,7 @@ let gulp = require('gulp'),
 
 gulp.task('px2rem', function() {
 	console.log('px2rem')
-	return gulp.src(config.temp + 'static/css/index.css')
+	return gulp.src(config.temp + 'static/css/**/*.css')
 		// .pipe(px2rem())
 		.pipe(gulpPx2remPlugin({
 			'width_design': 750,//设计稿宽度。默认值640

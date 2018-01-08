@@ -1,0 +1,52 @@
+@import "../variables";
+@import "../mixins";
+.btn {
+  display: inline-block;
+  touch-action: manipulation;
+  cursor: pointer;
+  user-select: none;
+  background-image: none;
+  outline: none;
+  border: none;
+  white-space: nowrap;
+  vertical-align: middle;
+  background: none;
+  text-align: center;
+  font-weight: normal;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+}
+
+.block-btn-yellow {
+  @include button-variant($c-black1, $c-yellow1);
+  @at-root .night &{
+    @include button-variant($c-night-black1, $c-night-yellow1);
+  }
+}
+
+.block-btn-red {
+  @include button-variant($c-black11, $c-red3);
+}
+
+.block-btn-transparent {
+  @include button-variant($c-black1, transparent);
+}
+
+.block-btn-yellow,.block-btn-red {
+  border-radius: 10rem;
+}
+
+.line-btn-yellow {
+  @include button-variant($c-yellow2, transparent, $c-yellow2);
+}
+
+.line-btn-black {
+  @include button-variant($c-black5, transparent, $c-black5);
+}
+
+.line-btn-transparent {
+  @include button-variant($c-black5, transparent);
+}
+.line-btn-yellow,.line-btn-black{
+  border-radius: 8px;
+}
