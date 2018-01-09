@@ -1,2 +1,9 @@
-@import "mixins/button";
+//注意引用顺序
+// Utilities
 @import "mixins/utils";
+
+// // Skins
+@import "mixins/transition";
+
+//components
+@import "mixins/button";

@@ -2,30 +2,53 @@
 <html lang="zh-CN">
 <head>
     @@include('../static/template/common/head.html')
+    <style type="text/css">
+        .l-example{
+            padding-bottom: 3rem;
+
+        }
+        .l-example button{
+            margin: 5px;
+        }
+
+        .loading{
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            border: 10px solid -webkit-linear-gradient(left, black 10%, rgba(255, 255, 255, 0) 42%);;
+            background: -webkit-linear-gradient(left, black 10%, rgba(255, 255, 255, 0) 42%);
+        }
+    </style>
 </head>
+<div class="loading"></div>
+
+<div class="l-example">
+    <!--button.u-btn$*6>{$}-->
+    <button type="button" class="u-btn1">按钮1</button>
+    <button type="button" class="u-btn2">按钮2</button>
+    <button type="button" class="u-btn3">按钮3</button>
+    <button type="button" class="u-btn4">按钮4</button>
+    <button type="button" class="u-btn5 ">按钮5</button>
+    <button type="button" class="u-btn5">按钮5</button>
+    <button type="button" class="u-btn6">按钮6</button>
+
+    <button type="button" class="u-line-btn1">按钮</button>
+    <button type="button" class="u-line-btn2">按钮2</button>
+    <button type="button" class="u-line-btn3">按钮3</button>
+    <button type="button" class="u-line-btn4">按钮4</button>
+    <button type="button" class="u-line-btn5">按钮5</button>
+    <button type="button" class="u-line-btn6">按钮6</button>
+    <button type="button" class="u-line-btn7">按钮7</button>
+    <button type="button" class="u-line-btn8">按钮8</button>
+
+    <a class="u-btn6" role="button">a按钮</a>
+    <a class="u-line-btn1" role="button">a按钮</a>
+    <a class="u-btn6 disabled" role="button">disabled</a>
 
 
-<button type="button" class="u-btn1">按钮1</button>
-<button type="button" class="u-btn2">按钮2</button>
-<button type="button" class="u-btn3">按钮3</button>
-<button type="button" class="u-btn4">按钮4</button>
 
-<!--button.u-btn$*6>{$}-->
-<button class="u-btn1">按钮1</button>
-<button class="u-btn2">按钮2</button>
-<button class="u-btn3">按钮3</button>
-<button class="u-btn4">按钮4</button>
-<button class="u-btn5">按钮5</button>
-<button class="u-btn6">按钮6</button>
+</div>
 
-<button class="u-line-btn1">按钮1</button>
-<button class="u-line-btn2">按钮2</button>
-<button class="u-line-btn3">按钮3</button>
-<button class="u-line-btn4">按钮4</button>
-<button class="u-line-btn5">按钮5</button>
-<button class="u-line-btn6">按钮6</button>
-<button class="u-line-btn7">按钮7</button>
-<button class="u-line-btn8">按钮8</button>
 
 <body>
 <div id="content">

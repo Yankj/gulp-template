@@ -13,9 +13,9 @@ let errorHandler = require('../../util.js');
 
 gulp.task('sass', function() {
 	return gulp.src(config.src + "/static/scss/**/*.scss")
-		.pipe(gulpReplace(/(\@include\s+[\w-]+(\(\$[\w-]+\)\+,*)+)/g,(s,m1) => {
-
-        }))
+        // .pipe(gulpReplace(/(\@include\s+[\w-]+(\(\$[\w-]+\)\+,*)+)/g,(s,m1) => {
+        //
+        // }))
         .pipe(gulpReplace(/([\w-]+?\s*?\:.*\$c-.+?;)/g,function (s,m1) {
             let m1_night = m1.replace(/\$c-/g,'$c-night-');
             return m1 + '\n @at-root .night &{' + m1_night + '}\n';

@@ -36,15 +36,17 @@ gulp.task('dev-server', function(cb) {
 		// port: 80,
 		middleware: [proxy1, proxyNoCache]
 	});
+
 	gulp.watch(config.src + "/static/scss/**/*.scss").on('change',function () {
-        runSequence(['sass'], ['px2rem']);
+        runSequence(['sass'],['px2rem'],browserSync.reload);
+        //修复监听css文件夹导致的问题(多次刷新、多个任务修改css)
     });
+
 	gulp.watch(config.src + "/static/es6/**/*.js", ['ES6']);
 	gulp.watch(config.src + "/static/img/**", ['imgMin']);
 	gulp.watch(config.src + "/**/*.html", ['fileInclude']);
 	gulp.watch([config.src + "/static/js/**",
 		config.temp + "/static/img/**",
-		config.temp + "/static/css/**",
 		config.temp + "/**/*.html"
 	]).on('change', browserSync.reload);
 })

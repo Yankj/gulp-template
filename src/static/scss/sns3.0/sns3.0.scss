@@ -106,15 +106,15 @@ $buttonMap: (
         .u-btn#{$k3} {
           @extend .btn;
           @extend .block-btn-#{$k2};
-          @include size(map-get($v3, width), map-get($v3, height));
-          @include font(map-get($v3, fontSize));
+          @include size(map-get($v3, width), map-get($v3, height),map-get($v3, fontSize));
+          /*@include font(map-get($v3, fontSize));*/
         }
       } @else {
         .u-line-btn#{$k3} {
           @extend .btn;
           @extend .line-btn-#{$k2};
-          @include size(map-get($v3, width), map-get($v3, height));
-          @include font(map-get($v3, fontSize));
+          @include size(map-get($v3, width), map-get($v3, height),map-get($v3, fontSize));
+          /*@include font(map-get($v3, fontSize));*/
         }
       }
 
@@ -122,7 +122,10 @@ $buttonMap: (
   }
 }
 
-
+/**
+* 字号大小
+* .s-fz96 即为96px
+**/
 $fontSizeArr : (96,44,40,36,32,30,28,26,24,22,20,18);
 
 @each $k in $fontSizeArr {

@@ -54,7 +54,7 @@ let gulpRevAll=require('gulp-rev-all');// 不要这样 revAll=require('gulp-rev-
 ```
 
 ## Else
-sns分支在@冯银超同学的基础上做了些改动以适应sns业务
+- sns分支在@冯银超同学的基础上做了些改动以适应sns业务
 
 ## Help
 @冯银超(yinchaofeng@sohu-inc.com)

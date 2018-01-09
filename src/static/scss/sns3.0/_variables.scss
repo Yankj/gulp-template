@@ -47,24 +47,38 @@ $c-night-black9 :#2A2A2A;
 $c-night-black10 :#2E2E2E;
 $c-night-black11 :#232323;
 
-//$night: (
-//        #FDD536: #7F5D17,
-//        #FFBC2F: #7E6A1A,
-//        #D9A815: #5C430F,
-//        #EE2F10:#6E2A2A,
-//        #FF644B:#7F3125,
-//        #ED5D49:#762E24,
-//        #3D5699:#374669,
-//        #3B87F9:#1D437C,
-//        #000:#7A7A7A,
-//        #161616:#6E6E6E,
-//        #3A3A3A:#5A3A3A,
-//        #454545:#707070,
-//        #929292:#606060,
-//        #B1B1B1:#4E4E4E,
-//        #DADADA:#343434,
-//        #E4E4E4:#313131,
-//        #F1F1F1:#2A2A2A,
-//        #F1F2F2: #2E2E2E,
-//        #FFF:#232323
-//);
+$night: (
+        #FDD536: #7F5D17,
+        #FFBC2F: #7E6A1A,
+        #D9A815: #5C430F,
+        #EE2F10:#6E2A2A,
+        #FF644B:#7F3125,
+        #ED5D49:#762E24,
+        #3D5699:#374669,
+        #3B87F9:#1D437C,
+        #000:#7A7A7A,
+        #161616:#6E6E6E,
+        #3A3A3A:#5A3A3A,
+        #454545:#707070,
+        #929292:#606060,
+        #B1B1B1:#4E4E4E,
+        #DADADA:#343434,
+        #E4E4E4:#313131,
+        #F1F1F1:#2A2A2A,
+        #F1F2F2: #2E2E2E,
+        #FFF:#232323
+);
+
+
+//Buttons
+$btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
+
+
+
+// Options
+$enable-transitions:        true !default;
+
+
+$transition-base:             all .2s ease-in-out !default;
+$transition-fade:             opacity .15s linear !default;
+$transition-collapse:         height .35s ease !default;

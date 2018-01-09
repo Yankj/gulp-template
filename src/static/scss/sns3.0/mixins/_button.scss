@@ -1,7 +1,28 @@
-@mixin button-variant($color: black, $background: transparent, $border:false){
+@mixin button($color: black, $background: transparent, $border:false,$opacity:0.3) {
   color: $color;
   background-color: $background;
-  @if $border{
+  @if $border {
     border-color: $border;
+    @include active-focus-disabled {
+      border-color: rgba($border, $opacity);
+    }
   }
+  @include active-focus-disabled {
+    color: rgba($color, $opacity);
+    background-color: rgba($background,if($background==transparent, 0, $opacity));
+    pointer-events:none;
+    cursor: not-allowed;
+  }
+
+}
+
+
+@mixin button-variant($color: black, $background: transparent, $border:false,$opacity:0.3) {
+
+  @include button($color,$background,$border,$opacity);
+  //night
+  @at-root .night &{
+    @include button(map-get($night,$color),if($background==transparent, transparent, map-get($night,$background)),if($border,map-get($night,$border),false));
+  }
+
 }

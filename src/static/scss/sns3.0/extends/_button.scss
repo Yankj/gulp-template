@@ -1,7 +1,10 @@
-@import "../variables";
 @import "../mixins";
 .btn {
-  display: inline-block;
+  //display: inline-block;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+
   touch-action: manipulation;
   cursor: pointer;
   user-select: none;
@@ -10,18 +13,15 @@
   border: none;
   white-space: nowrap;
   vertical-align: middle;
-  background: none;
   text-align: center;
   font-weight: normal;
   box-sizing: border-box;
   border: 1px solid transparent;
+  @include transition($btn-transition);
 }
 
 .block-btn-yellow {
   @include button-variant($c-black1, $c-yellow1);
-  @at-root .night &{
-    @include button-variant($c-night-black1, $c-night-yellow1);
-  }
 }
 
 .block-btn-red {
@@ -47,6 +47,7 @@
 .line-btn-transparent {
   @include button-variant($c-black5, transparent);
 }
-.line-btn-yellow,.line-btn-black{
+.line-btn-yellow,.line-btn-black,.line-btn-transparent{
+  background: none;
   border-radius: 8px;
 }
