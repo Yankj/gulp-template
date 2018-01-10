@@ -1,0 +1,23 @@
+<!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->
+<svg width="39" height="39" viewBox="0 0 31 31" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient x1="8.042%" y1="0%" x2="65.682%" y2="23.865%" id="a">
+            <stop stop-color="#b1b1b1" stop-opacity="0" offset="0%"/>
+            <stop stop-color="#b1b1b1" stop-opacity=".631" offset="63.146%"/>
+            <stop stop-color="#b1b1b1" offset="100%"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g transform="translate(3 3)">
+            <path d="M25 12.5c0-9.94-8.06-12.5-12.5-12.5"  id="Oval-2" stroke="url(#a)" stroke-width="4">
+                <animateTransform
+                    attributeName="transform"
+                    type="rotate"
+                    from="0 12.5 12.5"
+                    to="360 12.5 12.5"
+                    dur="6s"
+                    repeatCount="indefinite" />
+            </path>
+        </g>
+    </g>
+</svg>

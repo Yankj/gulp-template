@@ -3,25 +3,101 @@
 <head>
     @@include('../static/template/common/head.html')
     <style type="text/css">
-        .l-example{
+        body {
+            background-color: #ddd;
+        }
+
+        .l-example {
             padding-bottom: 3rem;
 
         }
-        .l-example button{
+
+        .l-example button {
             margin: 5px;
         }
 
-        .loading{
-            width: 1rem;
-            height: 1rem;
-            border-radius: 50%;
-            border: 10px solid -webkit-linear-gradient(left, black 10%, rgba(255, 255, 255, 0) 42%);;
-            background: -webkit-linear-gradient(left, black 10%, rgba(255, 255, 255, 0) 42%);
+        .u-loading {
+            width: 63px;
+            height: 63px;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.8);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translateY(-50%) translateX(-50%);
+        }
+
+        .u-loading .inner {
+            width: 29px;
+            height: 29px;
+            /*width: 100%;*/
+            /*height: 100%;*/
+            background: url("../static/img/loading-spin.svg") no-repeat center center;
+            /*background: url("../static/img/loading.svg") no-repeat center center;*/
+            /*background-color: white;*/
+            -webkit-background-size: cover;
+            background-size: cover;
+        }
+
+        svg circle {
+            fill: none;
+
+            stroke-dasharray: 100 250;
+            stroke-dashoffset: 0;
+        }
+        svg circle:nth-child(1){
+            stroke-dasharray: 195 250;
+            /*animation: long 1.832s cubic-bezier(0.18, 0, 0.58, 1)  0s infinite;*/
+        }
+        svg circle:nth-child(2){
+            /*stroke-dasharray: 30 250;*/
+            /*stroke-dashoffset: 30;*/
+            /*animation: short 1.832s cubic-bezier(0.18, 0, 0.58, 1)  0s infinite;*/
+        }
+        @keyframes long {
+            0% {
+                stroke-dasharray: 195 250;
+            }
+            50% {
+                stroke-dasharray: 50 250;
+            }
+            100% {
+                stroke-dasharray: 195 250;
+            }
+        }
+        @keyframes short {
+            0% {
+                stroke-dasharray: 30 250;
+            }
+            50% {
+                stroke-dasharray: 4 250;
+            }
+            100% {
+                stroke-dasharray: 30 250;
+            }
         }
     </style>
 </head>
-<div class="loading"></div>
 
+<svg width="200" height="200" viewBox="0 0 100 100">
+    <!--<defs>
+        <linearGradient x1="8.042%" y1="0%" x2="65.682%" y2="23.865%" id="a">
+            <stop stop-color="#b1b1b1" offset="100%"/>
+            <stop stop-color="#c7c7c7" offset="100%"/>
+        </linearGradient>
+    </defs>-->
+    <!--<circle cx="50" cy="50" r="40" stroke-width="10" stroke="url(#a)"/>-->
+    <circle cx="50" cy="50" r="40" stroke-width="10" stroke="#b1b1b1"/>
+    <circle cx="50" cy="50" r="40"  stroke-width="10" stroke="#c7c7c7"/>
+</svg>
+<div class="u-loading">
+    <div class="inner"></div>
+</div>
 <div class="l-example">
     <!--button.u-btn$*6>{$}-->
     <button type="button" class="u-btn1">按钮1</button>
@@ -44,7 +120,6 @@
     <a class="u-btn6" role="button">a按钮</a>
     <a class="u-line-btn1" role="button">a按钮</a>
     <a class="u-btn6 disabled" role="button">disabled</a>
-
 
 
 </div>

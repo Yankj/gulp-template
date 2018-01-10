@@ -4,7 +4,7 @@ const gulp = require('gulp'),
 	gulpSmushit = require('gulp-smushit');
 
 gulp.task('imgMin', function() {
-	return gulp.src(config.src + 'static/img/*.{jpg,png,jpeg}')
+	return gulp.src(config.src + 'static/img/*.{jpg,png,jpeg,svg,ico}')
 		.pipe(gulpIf(config.isImgOptmize, gulpSmushit({
 			verbose: true
 		})))
