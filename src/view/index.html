@@ -3,10 +3,6 @@
 <head>
     @@include('../static/template/common/head.html')
     <style type="text/css">
-        body {
-            background-color: #ddd;
-        }
-
         .l-example {
             padding-bottom: 3rem;
 
@@ -16,88 +12,30 @@
             margin: 5px;
         }
 
-        .u-loading {
-            width: 63px;
-            height: 63px;
-            border-radius: 8px;
-            background-color: rgba(255, 255, 255, 0.8);
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            position: fixed;
-            left: 50%;
-            top: 50%;
-            transform: translateY(-50%) translateX(-50%);
-        }
-
-        .u-loading .inner {
-            width: 29px;
-            height: 29px;
-            /*width: 100%;*/
-            /*height: 100%;*/
-            background: url("../static/img/loading-spin.svg") no-repeat center center;
-            /*background: url("../static/img/loading.svg") no-repeat center center;*/
-            /*background-color: white;*/
-            -webkit-background-size: cover;
-            background-size: cover;
-        }
-
-        svg circle {
-            fill: none;
-
-            stroke-dasharray: 100 250;
-            stroke-dashoffset: 0;
-        }
-        svg circle:nth-child(1){
-            stroke-dasharray: 195 250;
-            /*animation: long 1.832s cubic-bezier(0.18, 0, 0.58, 1)  0s infinite;*/
-        }
-        svg circle:nth-child(2){
-            /*stroke-dasharray: 30 250;*/
-            /*stroke-dashoffset: 30;*/
-            /*animation: short 1.832s cubic-bezier(0.18, 0, 0.58, 1)  0s infinite;*/
-        }
-        @keyframes long {
-            0% {
-                stroke-dasharray: 195 250;
-            }
-            50% {
-                stroke-dasharray: 50 250;
-            }
-            100% {
-                stroke-dasharray: 195 250;
-            }
-        }
-        @keyframes short {
-            0% {
-                stroke-dasharray: 30 250;
-            }
-            50% {
-                stroke-dasharray: 4 250;
-            }
-            100% {
-                stroke-dasharray: 30 250;
-            }
-        }
     </style>
 </head>
+<body>
 
-<svg width="200" height="200" viewBox="0 0 100 100">
-    <!--<defs>
-        <linearGradient x1="8.042%" y1="0%" x2="65.682%" y2="23.865%" id="a">
-            <stop stop-color="#b1b1b1" offset="100%"/>
-            <stop stop-color="#c7c7c7" offset="100%"/>
-        </linearGradient>
-    </defs>-->
-    <!--<circle cx="50" cy="50" r="40" stroke-width="10" stroke="url(#a)"/>-->
-    <circle cx="50" cy="50" r="40" stroke-width="10" stroke="#b1b1b1"/>
-    <circle cx="50" cy="50" r="40"  stroke-width="10" stroke="#c7c7c7"/>
-</svg>
+
+
 <div class="u-loading">
-    <div class="inner"></div>
+    <svg width="100%" height="100%" viewBox="0 0 100 100">
+        <circle class="c1" cx="50" cy="50" r="20"
+                fill="none"
+                stroke-width="5"
+                stroke-dasharray="101.4 130"
+                stroke-dashoffset="0"
+                stroke="#b1b1b1"/>
+        <circle class="c2" cx="50" cy="50" r="20"
+                fill="none"
+                stroke-width="5"
+                stroke-dasharray="15.6 130"
+                stroke-dashoffset="29"
+                stroke="#c7c7c7"/>
+    </svg>
 </div>
+
+
 <div class="l-example">
     <!--button.u-btn$*6>{$}-->
     <button type="button" class="u-btn1">按钮1</button>
@@ -132,6 +70,12 @@
 <script src="../static/js/lib/doT.min.js"></script>
 <!-- 在 test 环境会引入vconsole调试工具 -->
 @@if (env === 'test') { @@include('../static/template/common/vconsole.html') }
+@@if (env === 'test') {
+<script type="text/javascript" src="http://sns_wf.cdn.sohusce.com/js-sdk/sohusns/1.0.9/sohusns.js"></script>
+<script type="text/javascript">
+    sohusns.openInSNSWebview();
+</script>
+}
 <!-- 当开启config.js中埋点开关时会引入埋点脚本  -->
 @@if(buryPointSwitch==='true'){ @@if (env === 'test'){@@include('../static/template/common/mixpanel-test.html') }
 @@if(env==='product') { @@include('../static/template/common/mixpanel-product.html') } }

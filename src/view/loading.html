@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    @@include('../static/template/common/head.html')
+    <style type="text/css">
+
+        svg{
+            /*animation: rotate 1.832s linear 0s infinite;*/
+        }
+        svg circle {
+            fill: none;
+            /*stroke-dasharray: 100 130;*/
+        }
+        svg circle.c1{
+            stroke-dasharray: 101.4 130;
+            stroke-dashoffset: 0;
+            animation: long 1.832s cubic-bezier(0.18, 0, 0.58, 1)  0s infinite;
+        }
+        svg circle.c2{
+            stroke-dasharray: 15.6 130;
+            stroke-dashoffset: 29;
+            animation: short 1.832s cubic-bezier(0.18, 0, 0.58, 1)  0s infinite;
+        }
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(720deg);
+            }
+        }
+        @keyframes long {
+            0% {
+                stroke-dasharray: 101.4 130;
+            }
+            50% {
+                stroke-dasharray: 26 130;
+            }
+            100% {
+                stroke-dasharray: 101.4 130;
+            }
+        }
+        @keyframes short {
+            0% {
+                stroke-dasharray: 15.6 130;
+                stroke-dashoffset: 29;
+            }
+            50% {
+                stroke-dasharray: 5.2 130;
+                stroke-dashoffset: 8;
+            }
+            100% {
+                stroke-dasharray: 15.6 130;
+                stroke-dashoffset: 29;
+            }
+        }
+    </style>
+</head>
+
+<svg width="200" height="200" viewBox="0 0 100 100">
+    <animateTransform
+            attributeName="transform"
+            type="rotate"
+            from="0 0 0"
+            to="720 0 0"
+            dur="1.832s"
+            repeatCount="indefinite" />
+    <circle class="c1" cx="50" cy="50" r="21" stroke-width="4" stroke="#b1b1b1"/>
+    <circle class="c2" cx="50" cy="50" r="21" stroke-width="4" stroke="#c7c7c7"/>
+</svg>
+
+
+<body>
+<div id="content">
+</div>
+
+<script src="../static/js/lib/zepto.min.js"></script>
+<script src="../static/js/lib/doT.min.js"></script>
+<!-- 在 test 环境会引入vconsole调试工具 -->
+@@if (env === 'test') { @@include('../static/template/common/vconsole.html') }
+<!-- 当开启config.js中埋点开关时会引入埋点脚本  -->
+@@if(buryPointSwitch==='true'){ @@if (env === 'test'){@@include('../static/template/common/mixpanel-test.html') }
+@@if(env==='product') { @@include('../static/template/common/mixpanel-product.html') } }
+</body>
+
+<script type="text/javascript">
+
+
+</script>
+
+
+</html>

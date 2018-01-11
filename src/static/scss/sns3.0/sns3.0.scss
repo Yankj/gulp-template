@@ -2,6 +2,10 @@
 @import "mixins";
 @import "extends";
 
+
+@import "loading";
+
+
 body {
   background-color: $c-black11;
 }
@@ -120,6 +124,12 @@ $buttonMap: (
 
     }
   }
+}
+
+//.u-btn1特殊，宽度自适应
+.u-btn1 {
+  padding: 0 20px;
+  width: auto;
 }
 
 /**
