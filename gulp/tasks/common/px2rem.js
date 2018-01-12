@@ -1,5 +1,5 @@
 let gulp = require('gulp'),
-	config = require('../../../config/config.js'),
+	config = require('../../../config.js'),
 	gulpPx2remPlugin = require('gulp-px2rem-plugin');
 
 gulp.task('px2rem', function() {

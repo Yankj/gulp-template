@@ -1,47 +1,19 @@
-let gulp = require('gulp'),
-	config = require('../../../config/config.js'),
-	gulpCleanCSS = require('gulp-clean-css'),
-	gulphHtmlmin = require('gulp-htmlmin'),
-	gulpUglify = require('gulp-uglify'),
-	gulpRevAll = require('gulp-rev-all'),
-	gulpUsemin = require('gulp-usemin'),
-	gulpPlumber = require('gulp-plumber'); //错误自启动
+/*
+	功能：处理html文件中特殊注释，做合并处理
+ */
 
-let errorHandler = require('../../util.js');
+let gulp = require('gulp'),
+	config = require('../../../config.js'),
+	gulpUsemin = require('gulp-usemin'); //错误自启动
+
 gulp.task('usemin', function() { //
-	return gulp.src(config.temp + 'view/index.html', {
+	return gulp.src(config.temp + 'view/*.html', {
 			base: config.temp
 		})
 		.pipe(gulpUsemin({
-			css: [
-				gulpCleanCSS(),
-				gulpRevAll.revision({
-					hashLength: 4
-				})
-			],
-			js: [
-				gulpPlumber(errorHandler),
-				gulpUglify({
-					compress: {
-						drop_console: true
-					},
-					jsAttributes: {
-						defer: true
-					}
-				}),
-				gulpRevAll.revision({
-					hashLength: 4
-				})
-			],
-			html: [
-				gulpPlumber(errorHandler),
-				gulphHtmlmin({
-					collapseWhitespace: true,
-					removeComments: true,
-					minifyJS: true,
-					minifyCSS: true
-				})
-			]
+			jsAttributes: {
+				defer: true
+			}
 		}))
-		.pipe(gulp.dest(config.dist + 'sce/app'));
+		.pipe(gulp.dest(config.dist + 'sce/app/'));
 });

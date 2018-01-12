@@ -1,5 +1,9 @@
+/*
+	功能：处理html文件中公共资源的引入
+ */
+
 let gulpFileInclude = require('gulp-file-include'),
-	config = require('../../../config/config.js'),
+	config = require('../../../config.js'),
 	gulp = require('gulp');
 
 let {
@@ -11,8 +15,11 @@ gulp.task('fileInclude', function() {
 		.pipe(gulpFileInclude({ //这个插件只能传字符串
 			context: {
 				env: env === 'product' ? 'product' : 'test',
-				buryPointSwitch: config.buryPointSwitch ? 'true' : 'false'
-			}
+				buryPointSwitch: config.buryPointSwitch ? 'true' : 'false',
+				testToken: config.sce[env].appToken,
+				productToken: config.sce[env].appToken
+			},
+			prefix: '@'
 		}))
 		.pipe(gulp.dest(config.temp + 'view/'));
 });

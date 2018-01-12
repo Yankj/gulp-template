@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    @@include('../static/template/common/head.html')
+    @include('../static/template/common/head.html')
     <style type="text/css">
         .l-example {
             padding-bottom: 3rem;
@@ -64,27 +64,14 @@
 
 
 <body>
-<div id="content">
-</div>
-<script src="../static/js/lib/zepto.min.js"></script>
-<script src="../static/js/lib/doT.min.js"></script>
-<!-- 在 test 环境会引入vconsole调试工具 -->
-@@if (env === 'test') { @@include('../static/template/common/vconsole.html') }
-@@if (env === 'test') {
-<script type="text/javascript" src="http://sns_wf.cdn.sohusce.com/js-sdk/sohusns/1.0.9/sohusns.js"></script>
-<script type="text/javascript">
-    sohusns.openInSNSWebview();
-</script>
-}
-<!-- 当开启config.js中埋点开关时会引入埋点脚本  -->
-@@if(buryPointSwitch==='true'){ @@if (env === 'test'){@@include('../static/template/common/mixpanel-test.html') }
-@@if(env==='product') { @@include('../static/template/common/mixpanel-product.html') } }
+    <div id="content">
+    </div>
+    <script src="../static/js/lib/zepto.min.js"></script>
+    <script src="../static/js/lib/doT.min.js"></script>
+    <!-- 在 test 环境会引入vconsole调试工具 -->
+    @@if (env === 'test') { @@include('../static/template/common/vconsole.html') }
+    <!-- 当开启config.js中埋点开关时会引入埋点脚本  -->
+    @@if(buryPointSwitch==='true'){ @@if (env === 'test'){@@include('../static/template/common/mixpanel-test.html') } @@if(env==='product') { @@include('../static/template/common/mixpanel-product.html') } }
 </body>
-
-<script type="text/javascript">
-
-
-</script>
-
 
 </html>

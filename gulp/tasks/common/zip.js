@@ -1,5 +1,9 @@
+/*
+	功能：发布前zip化
+ */
+
 let gulp = require('gulp'),
-	config = require('../../../config/config.js'),
+	config = require('../../../config.js'),
 	runSequence = require('run-sequence'),
 	gulpZip = require('gulp-zip');
 
