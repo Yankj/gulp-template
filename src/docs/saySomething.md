@@ -23,7 +23,7 @@
       [更多>>](https://github.com/lmk123/blog/issues/28)
   - gulp-template
   	1. 重启没clean temp
-    2. _ 命名
+    2. 不需要编译的scss用_ 命名,//注释编译时去掉，/**/注释留下
     3. scss任务中的autoprifixer顺序与scss冲突
     4. gulp-px2rem-plugin的bug
     ```

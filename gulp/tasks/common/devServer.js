@@ -28,7 +28,7 @@ gulp.task('dev-server', function(cb) {
 	gulp.watch(config.src + "static/es6/**/*.js", ['ES6']);
 	gulp.watch(config.src + "static/img/**", ['imgMin']);
 	gulp.watch(config.src + "static/scss/**").on('change', function() {
-		runSequence(['sass'], ['uncss'], ['cssSprite'], ['px2rem'], browserSync.reload);
+		runSequence(['sass'], ['uncss'], ['cssSprite'],['copyCss2Docs'], ['px2rem'], browserSync.reload);
 	});
 	gulp.watch(config.src + "**/*.html").on('change', function() {
 		runSequence(['fileInclude'], browserSync.reload);

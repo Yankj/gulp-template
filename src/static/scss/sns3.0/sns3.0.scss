@@ -111,14 +111,14 @@ $buttonMap: (
           @extend .btn;
           @extend .block-btn-#{$k2};
           @include size(map-get($v3, width), map-get($v3, height),map-get($v3, fontSize));
-          /*@include font(map-get($v3, fontSize));*/
+          //@include font(map-get($v3, fontSize));
         }
       } @else {
         .u-line-btn#{$k3} {
           @extend .btn;
           @extend .line-btn-#{$k2};
           @include size(map-get($v3, width), map-get($v3, height),map-get($v3, fontSize));
-          /*@include font(map-get($v3, fontSize));*/
+          //@include font(map-get($v3, fontSize));
         }
       }
 

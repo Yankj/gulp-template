@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    @@include('../static/template/common/head.html')
+    @include('../static/template/common/head.html')
     <style type="text/css">
 
-        svg{
-            /*animation: rotate 1.832s linear 0s infinite;*/
+        svg.loading{
+            animation: rotate 1.832s linear 0s infinite;
         }
-        svg circle {
+        svg.loading circle {
             fill: none;
             /*stroke-dasharray: 100 130;*/
         }
-        svg circle.c1{
+        svg.loading circle.c1{
             stroke-dasharray: 101.4 130;
             stroke-dashoffset: 0;
             animation: long 1.832s cubic-bezier(0.18, 0, 0.58, 1)  0s infinite;
         }
-        svg circle.c2{
+        svg.loading circle.c2{
             stroke-dasharray: 15.6 130;
             stroke-dashoffset: 29;
             animation: short 1.832s cubic-bezier(0.18, 0, 0.58, 1)  0s infinite;
@@ -54,20 +54,123 @@
                 stroke-dashoffset: 29;
             }
         }
+
+
+        @keyframes long2 {
+            0% {
+                stroke-dasharray: 205.14 263;
+            }
+            50% {
+                stroke-dasharray: 52.6 263;
+            }
+            100% {
+                stroke-dasharray: 205.14 263;
+            }
+        }
+        @keyframes short2 {
+            0% {
+                stroke-dasharray: 31.56 263;
+                stroke-dashoffset: 62;
+            }
+            50% {
+                stroke-dasharray: 10.52 263;
+                stroke-dashoffset: 8;
+            }
+            100% {
+                stroke-dasharray: 31.56 263;
+                stroke-dashoffset: 29;
+            }
+        }
+
+
+
+        svg.loading2{
+            /*animation: rotate 1.832s linear 0s infinite;*/
+        }
+        svg.loading2 circle {
+            fill: none;
+        }
+        svg.loading2 circle.c1{
+            stroke-dasharray: 205.14 263;
+            stroke-dashoffset: 0;
+            /*animation: long2 1.832s cubic-bezier(0.18, 0, 0.58, 1)  0s infinite;*/
+        }
+        svg.loading2 circle.c2{
+            stroke-dasharray: 31.56 263;
+            stroke-dashoffset: 32;
+            /*animation: short2 1.832s cubic-bezier(0.18, 0, 0.58, 1)  0s infinite;*/
+        }
+
+
+
+        svg.loading3 circle {
+            fill: none;
+        }
+        svg.loading3 circle.c1{
+            stroke-dasharray: 101.4 130;
+            stroke-dashoffset: 0;
+            animation: long 1.832s cubic-bezier(0.18, 0, 0.58, 1)  0s infinite;
+        }
+        svg.loading3 circle.c2{
+            stroke-dasharray: 15.6 130;
+            stroke-dashoffset: 29;
+            animation: short 1.832s cubic-bezier(0.18, 0, 0.58, 1)  0s infinite;
+        }
+
     </style>
 </head>
 
-<svg width="200" height="200" viewBox="0 0 100 100">
+<svg class="loading" width="200" height="200" viewBox="0 0 100 100">
     <animateTransform
             attributeName="transform"
             type="rotate"
+            begin="0s"
+            dur="1.832s"
             from="0 0 0"
             to="720 0 0"
-            dur="1.832s"
             repeatCount="indefinite" />
     <circle class="c1" cx="50" cy="50" r="21" stroke-width="4" stroke="#b1b1b1"/>
     <circle class="c2" cx="50" cy="50" r="21" stroke-width="4" stroke="#c7c7c7"/>
 </svg>
+
+<div style="height: 300px;width: 300px">
+    <svg class="loading2" width="100%" height="100%" viewBox="0 0 100 100">
+        <!--<circle class="c1" cx="50" cy="50" r="42" stroke-width="8" stroke="#b1b1b1"/>-->
+        <circle class="c2" cx="50" cy="50" r="46" stroke-width="8" stroke="#c7c7c7"/>
+    </svg>
+</div>
+
+
+<!--旋转放内部-->
+<svg class="loading3" width="200" height="200" viewBox="0 0 100 100">
+    <circle class="c1" cx="50" cy="50" r="21" stroke-width="4" stroke="#b1b1b1">
+        <animateTransform
+                attributeName="transform"
+                type="rotate"
+                begin="0s"
+                dur="1.832s"
+                from="0  50 50"
+                to="720  50 50"
+                repeatCount="indefinite" />
+    </circle>
+    <circle class="c2" cx="50" cy="50" r="21" stroke-width="4" stroke="#c7c7c7">
+        <animateTransform
+                attributeName="transform"
+                type="rotate"
+                begin="0s"
+                dur="1.832s"
+                from="0 50 50"
+                to="720 50 50"
+                repeatCount="indefinite" />
+    </circle>
+</svg>
+
+
+<!--<svg class="svg-loading" width="200px" height="200px" viewBox="0 0 100 100">-->
+    <!--<circle class="c1" cx="50" cy="50" r="20" fill="none" stroke-width="5" stroke-dasharray="101.4 130" stroke-dashoffset="0" stroke="#b1b1b1">-->
+        <!--<animateTransform attributeName="transform" begin="0s" dur="1s"  type="rotate"  repeatCount="indefinite" from="0 50 50" to="360 50 50"/>-->
+    <!--</circle>-->
+<!--</svg>-->
 
 
 <body>
@@ -77,10 +180,10 @@
 <script src="../static/js/lib/zepto.min.js"></script>
 <script src="../static/js/lib/doT.min.js"></script>
 <!-- 在 test 环境会引入vconsole调试工具 -->
-@@if (env === 'test') { @@include('../static/template/common/vconsole.html') }
+@if (env === 'test') { @include('../static/template/common/vconsole.html') }
 <!-- 当开启config.js中埋点开关时会引入埋点脚本  -->
-@@if(buryPointSwitch==='true'){ @@if (env === 'test'){@@include('../static/template/common/mixpanel-test.html') }
-@@if(env==='product') { @@include('../static/template/common/mixpanel-product.html') } }
+@if(buryPointSwitch==='true'){ @if (env === 'test'){@include('../static/template/common/mixpanel-test.html') }
+@if(env==='product') { @include('../static/template/common/mixpanel-product.html') } }
 </body>
 
 <script type="text/javascript">

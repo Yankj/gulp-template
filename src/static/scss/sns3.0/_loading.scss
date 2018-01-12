@@ -10,16 +10,18 @@
   transform: translateY(-50%) translateX(-50%);
 }
 
-.u-loading svg{
+.svg-loading{
   animation: rotate 1.832s linear 0s infinite;
+  circle{
+    &.c1{
+      animation: long 1.832s cubic-bezier(0.18, 0, 0.58, 1)  0s infinite;
+    }
+    &.c2{
+      animation: short 1.832s cubic-bezier(0.18, 0, 0.58, 1)  0s infinite;
+    }
+  }
 }
 
-.u-loading svg circle.c1{
-  animation: long 1.832s cubic-bezier(0.18, 0, 0.58, 1)  0s infinite;
-}
-.u-loading svg circle.c2{
-  animation: short 1.832s cubic-bezier(0.18, 0, 0.58, 1)  0s infinite;
-}
 @keyframes long {
   0% {
     stroke-dasharray: 101.4 130;
@@ -31,6 +33,7 @@
     stroke-dasharray: 101.4 130;
   }
 }
+
 @keyframes short {
   0% {
     stroke-dasharray: 15.6 130;
@@ -45,6 +48,7 @@
     stroke-dashoffset: 29;
   }
 }
+
 @keyframes rotate {
   0% {
     transform: rotate(0deg);

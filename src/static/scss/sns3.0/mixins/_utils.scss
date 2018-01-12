@@ -1,8 +1,8 @@
 @mixin size($width: 168px,$height: 88px,$fz: 28px){
   width: $width;
   height: $height;
-  /*line-height: 1;
-  padding: ($height - $fz)/2 0;*/
+  line-height: 1;
+  //padding: ($height - $fz)/2 0;
   font-size: $fz;
 }
 

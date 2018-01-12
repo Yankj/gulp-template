@@ -32,8 +32,9 @@
   @include button-variant($c-black1, transparent);
 }
 
-.block-btn-yellow,.block-btn-red {
+.block-btn-yellow,.block-btn-red,.block-btn-transparent {
   border-radius: 10rem;
+  border: none;
 }
 
 .line-btn-yellow {

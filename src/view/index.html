@@ -19,7 +19,7 @@
 
 
 <div class="u-loading">
-    <svg width="100%" height="100%" viewBox="0 0 100 100">
+    <svg class="svg-loading" width="100%" height="100%" viewBox="0 0 100 100">
         <circle class="c1" cx="50" cy="50" r="20"
                 fill="none"
                 stroke-width="5"
@@ -69,9 +69,9 @@
     <script src="../static/js/lib/zepto.min.js"></script>
     <script src="../static/js/lib/doT.min.js"></script>
     <!-- 在 test 环境会引入vconsole调试工具 -->
-    @@if (env === 'test') { @@include('../static/template/common/vconsole.html') }
+    @if (env === 'test') { @include('../static/template/common/vconsole.html') }
     <!-- 当开启config.js中埋点开关时会引入埋点脚本  -->
-    @@if(buryPointSwitch==='true'){ @@if (env === 'test'){@@include('../static/template/common/mixpanel-test.html') } @@if(env==='product') { @@include('../static/template/common/mixpanel-product.html') } }
+    @if(buryPointSwitch==='true'){ @if (env === 'test'){@include('../static/template/common/mixpanel-test.html') } @if(env==='product') { @include('../static/template/common/mixpanel-product.html') } }
 </body>
 
 </html>

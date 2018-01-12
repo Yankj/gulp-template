@@ -44,7 +44,7 @@ gulp.task('sass', function() {
         .pipe(gulpSass())
         .pipe(gulpAutoprefixer())
 		.pipe(gulpUncss({
-			html: [config.temp + 'view/**/*.html'],
+			html: [config.temp + 'view/**/*.html','!' + config.temp + 'view/docs/*.html'],
 			ignore: ['.test']
 		}))
 		.pipe(gulpLogger({

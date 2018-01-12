@@ -23,7 +23,7 @@ if (env !== 'dev') {
 gulp.task('build', function(cb) { //默认不放 CDN
 	del.sync(config.temp);
 	del.sync(config.dist);
-	runSequence(['eslint', 'ES6', 'imgMin', 'fileInclude', 'sceInit'], ['sass'], ['uncss'], ['sprite'], ['usemin'], ['cssmin', 'jsmin', 'htmlmin'], ['revision'], ['cdnPre'], ['delRedundant'], ['zip'], ['openUrl'], function() {
+	runSequence(['eslint', 'ES6', 'imgMin', 'fileInclude', 'sceInit'], ['sass'], ['uncss'], ['copyCss2Docs'], ['sprite'],['px2rem'], ['usemin'], ['cssmin', 'jsmin', 'htmlmin'], ['revision'], ['cdnPre'], ['delRedundant'], ['zip'], ['openUrl'], function() {
 		if (cdn === 'true') console.log('○ 静态资源zip请上传至：' + config.cdnPath);
 		console.log('○ sce zip请上传至：' + config.sce.manageUrl + config.sce[env].appId);
 		console.log('\n\n/***********************    打包结束，当前环境为：' + chalk.blue.bold(env) + '    ***********************/' + '\n');
@@ -31,10 +31,10 @@ gulp.task('build', function(cb) { //默认不放 CDN
 })
 
 gulp.task('dev', function(cb) {
-	del.sync(config.temp);
-	config.buryPointSwitch = false;
-	config.isImgOptmize = false;
-	runSequence(['fileInclude', 'eslint', 'ES6', 'imgMin'], ['sass'], ['uncss'], ['sprite'],['copyDocs'], ['dev-server'], cb);
+    del.sync(config.temp);
+    config.buryPointSwitch = false;
+    config.isImgOptmize = false;
+    runSequence(['fileInclude', 'eslint', 'ES6', 'imgMin'], ['sass'], ['uncss'], ['copyCss2Docs'], ['sprite'], ['px2rem'], ['copyDocs'], ['dev-server'], cb);
 });
 
 
