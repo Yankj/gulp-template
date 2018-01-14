@@ -4,22 +4,20 @@
     @include('../static/template/common/head.html')
     <style type="text/css">
 
-        svg.loading{
+        svg.loading1{
             animation: rotate 1.832s linear 0s infinite;
         }
-        svg.loading circle {
-            fill: none;
-            /*stroke-dasharray: 100 130;*/
-        }
-        svg.loading circle.c1{
+        svg.loading1 circle.c1{
             stroke-dasharray: 101.4 130;
             stroke-dashoffset: 0;
             animation: long 1.832s cubic-bezier(0.18, 0, 0.58, 1)  0s infinite;
+            animation-direction:alternate;
         }
-        svg.loading circle.c2{
+        svg.loading1 circle.c2{
             stroke-dasharray: 15.6 130;
             stroke-dashoffset: 29;
             animation: short 1.832s cubic-bezier(0.18, 0, 0.58, 1)  0s infinite;
+            animation-direction:alternate;
         }
         @keyframes rotate {
             0% {
@@ -58,54 +56,49 @@
 
         @keyframes long2 {
             0% {
-                stroke-dasharray: 205.14 263;
+                stroke-dasharray: 223.75 288;
             }
             50% {
-                stroke-dasharray: 52.6 263;
+                stroke-dasharray: 57.6 288;
             }
             100% {
-                stroke-dasharray: 205.14 263;
+                stroke-dasharray: 223.75 288;
             }
         }
         @keyframes short2 {
             0% {
-                stroke-dasharray: 31.56 263;
-                stroke-dashoffset: 62;
+                stroke-dasharray: 34.56 288;/*12*/
+                stroke-dashoffset: 68.12; /* 34.56*2 - 1 */
             }
             50% {
-                stroke-dasharray: 10.52 263;
-                stroke-dashoffset: 8;
+                stroke-dasharray:  11.52 288; /*4*/
+                stroke-dashoffset: 22;
             }
             100% {
-                stroke-dasharray: 31.56 263;
-                stroke-dashoffset: 29;
+                stroke-dasharray: 34.56 288;/*12*/
+                stroke-dashoffset: 68.12;
             }
         }
 
-
+/**
+* 先找到 stroke-dasharray的临界值，调stroke-dashoffset让第二段跟第一段连起来
+*/
 
         svg.loading2{
             /*animation: rotate 1.832s linear 0s infinite;*/
         }
-        svg.loading2 circle {
-            fill: none;
-        }
         svg.loading2 circle.c1{
-            stroke-dasharray: 205.14 263;
+            stroke-dasharray: 223.75 288;
             stroke-dashoffset: 0;
-            /*animation: long2 1.832s cubic-bezier(0.18, 0, 0.58, 1)  0s infinite;*/
+            animation: long2 1.832s cubic-bezier(0.18, 0, 0.58, 1)  0s infinite;
         }
         svg.loading2 circle.c2{
-            stroke-dasharray: 31.56 263;
-            stroke-dashoffset: 32;
-            /*animation: short2 1.832s cubic-bezier(0.18, 0, 0.58, 1)  0s infinite;*/
+            stroke-dasharray: 34.56 288;/*12*/
+            stroke-dashoffset: 68.12;
+            animation: short2 1.832s cubic-bezier(0.18, 0, 0.58, 1)  0s infinite;
         }
 
 
-
-        svg.loading3 circle {
-            fill: none;
-        }
         svg.loading3 circle.c1{
             stroke-dasharray: 101.4 130;
             stroke-dashoffset: 0;
@@ -113,37 +106,68 @@
         }
         svg.loading3 circle.c2{
             stroke-dasharray: 15.6 130;
-            stroke-dashoffset: 29;
+            stroke-dashoffset: 29.6;
             animation: short 1.832s cubic-bezier(0.18, 0, 0.58, 1)  0s infinite;
         }
 
+
+
+        svg.loading4 circle.c1{
+            stroke-dasharray: 146.6 188;
+            stroke-dashoffset: 0;
+            animation: long4 1.832s cubic-bezier(0.18, 0, 0.58, 1)  0s infinite;
+        }
+        svg.loading4 circle.c2{
+            stroke-dasharray: 22.56 188;
+            stroke-dashoffset: 44;
+            animation: short4 1.832s cubic-bezier(0.18, 0, 0.58, 1)  0s infinite;
+        }
+        @keyframes long4 {
+            0% {
+                stroke-dasharray: 146.6 188;
+            }
+            50% {
+                stroke-dasharray: 7.4 188;
+            }
+            100% {
+                stroke-dasharray: 146.6 188;
+            }
+        }
+        @keyframes short4 {
+            0% {
+                stroke-dasharray: 22.56 188;
+                stroke-dashoffset: 44.12;
+            }
+            50% {
+                stroke-dasharray: 7.52 188;
+                stroke-dashoffset: 14.04;
+            }
+            100% {
+                stroke-dasharray: 22.56 188;
+                stroke-dashoffset: 44.12;
+            }
+        }
     </style>
 </head>
+<body>
 
-<svg class="loading" width="200" height="200" viewBox="0 0 100 100">
-    <animateTransform
-            attributeName="transform"
-            type="rotate"
-            begin="0s"
-            dur="1.832s"
-            from="0 0 0"
-            to="720 0 0"
-            repeatCount="indefinite" />
-    <circle class="c1" cx="50" cy="50" r="21" stroke-width="4" stroke="#b1b1b1"/>
-    <circle class="c2" cx="50" cy="50" r="21" stroke-width="4" stroke="#c7c7c7"/>
+<!--居中的loading-->
+<svg class="loading1" width="200" height="200" viewBox="0 0 100 100">
+    <circle class="c1" cx="50" cy="50" r="21" fill="none" stroke-width="4" stroke="#b1b1b1"/>
+    <circle class="c2" cx="50" cy="50" r="21" fill="none" stroke-width="4" stroke="#c7c7c7"/>
 </svg>
 
+<!--撑满的loading-->
 <div style="height: 300px;width: 300px">
     <svg class="loading2" width="100%" height="100%" viewBox="0 0 100 100">
-        <!--<circle class="c1" cx="50" cy="50" r="42" stroke-width="8" stroke="#b1b1b1"/>-->
-        <circle class="c2" cx="50" cy="50" r="46" stroke-width="8" stroke="#c7c7c7"/>
+        <circle class="c1" cx="50" cy="50" r="46" fill="none" stroke-width="8" stroke="#b1b1b1"/>
+        <circle class="c2" cx="50" cy="50" r="46" fill="none" stroke-width="8" stroke="#c7c7c7"/>
     </svg>
 </div>
 
-
 <!--旋转放内部-->
 <svg class="loading3" width="200" height="200" viewBox="0 0 100 100">
-    <circle class="c1" cx="50" cy="50" r="21" stroke-width="4" stroke="#b1b1b1">
+    <circle class="c1" cx="50" cy="50" r="21" fill="none" stroke-width="4" stroke="#b1b1b1">
         <animateTransform
                 attributeName="transform"
                 type="rotate"
@@ -153,7 +177,7 @@
                 to="720  50 50"
                 repeatCount="indefinite" />
     </circle>
-    <circle class="c2" cx="50" cy="50" r="21" stroke-width="4" stroke="#c7c7c7">
+    <circle class="c2" cx="50" cy="50" r="21" fill="none" stroke-width="4" stroke="#c7c7c7">
         <animateTransform
                 attributeName="transform"
                 type="rotate"
@@ -165,17 +189,23 @@
     </circle>
 </svg>
 
-
-<!--<svg class="svg-loading" width="200px" height="200px" viewBox="0 0 100 100">-->
-    <!--<circle class="c1" cx="50" cy="50" r="20" fill="none" stroke-width="5" stroke-dasharray="101.4 130" stroke-dashoffset="0" stroke="#b1b1b1">-->
-        <!--<animateTransform attributeName="transform" begin="0s" dur="1s"  type="rotate"  repeatCount="indefinite" from="0 50 50" to="360 50 50"/>-->
-    <!--</circle>-->
-<!--</svg>-->
-
-
-<body>
-<div id="content">
+<!--再练习一个-->
+<div style="height: 100px;width: 100px">
+    <svg class="loading4" width="100%" height="100%" viewBox="0 0 100 100">
+        <circle class="c1" cx="50" cy="50" r="30" fill="none" stroke-width="8" stroke="#b1b1b1"/>
+        <circle class="c2" cx="50" cy="50" r="30" fill="none" stroke-width="8" stroke="#c7c7c7"/>
+    </svg>
 </div>
+
+<!--
+* 修改r之后，c1的stroke-dasharray 第一个参数为1时，第二个参数为周长时刚好只剩一个小边
+* stroke-dasharray： a b; stroke-dashoffset: c; 则在a = b+ c时刚好组成一个（这个圆由边框的一小段组成）
+* stroke-dasharray: 296 288; stroke-dashoffset: 8;
+* 根据长度所需 可按 288的比例算取
+* 调c2, 当a有值，增加c，可以发现当a = c 时，c继续增加则 长度返回反向走，假如需要长度为7%，则可以让a= 7%*b,让c=a+  7%*b（想让c断点就少加点）
+* c2的stroke-dashoffset再减一个1 免得连不上
+-->
+
 
 <script src="../static/js/lib/zepto.min.js"></script>
 <script src="../static/js/lib/doT.min.js"></script>
