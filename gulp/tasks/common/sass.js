@@ -7,6 +7,7 @@ let gulp = require('gulp'),
 	gulpSass = require('gulp-sass'),
 	// postCss = require('gulp-postcss'),
     gulpReplace = require('gulp-replace'),
+	gulpNotify = require('gulp-notify'),
 	gulpUncss = require('gulp-uncss'), //删除多余css
 	gulpAutoprefixer = require('gulp-autoprefixer'),
 	gulpPlumber = require('gulp-plumber'), //错误自启动
@@ -43,10 +44,10 @@ gulp.task('sass', function() {
 		.pipe(gulpPlumber(errorHandler))
         .pipe(gulpSass())
         .pipe(gulpAutoprefixer())
-		.pipe(gulpUncss({
-			html: [config.temp + 'view/**/*.html','!' + config.temp + 'view/docs/*.html'],
-			ignore: ['.test']
-		}))
+		// .pipe(gulpUncss({
+		// 	html: [config.temp + 'view/**/*.html','!' + config.temp + 'view/docs/*.html'],
+		// 	ignore: ['.test']
+		// }))
 		.pipe(gulpLogger({
 			showChange: true
 		}))

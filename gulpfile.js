@@ -34,7 +34,8 @@ gulp.task('dev', function(cb) {
     del.sync(config.temp);
     config.buryPointSwitch = false;
     config.isImgOptmize = false;
-    runSequence(['fileInclude', 'eslint', 'ES6', 'imgMin'], ['sass'], ['uncss'], ['copyCss2Docs'], ['sprite'], ['px2rem'], ['copyDocs'], ['dev-server'], cb);
+    // runSequence(['fileInclude', 'eslint', 'ES6', 'imgMin'], ['sass'], ['uncss'], ['copyCss2Docs'], ['sprite'], ['px2rem'], ['copyDocs'], ['dev-server'], cb);
+    runSequence(['fileInclude', 'eslint', 'ES6', 'imgMin'], ['sass'], ['copyCss2Docs'], ['sprite'], ['px2rem'], ['copyDocs'], ['dev-server'], cb);
 });
 
 

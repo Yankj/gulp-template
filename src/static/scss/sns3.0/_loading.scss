@@ -2,22 +2,33 @@
   width: 1.26rem;
   height: 1.26rem;
   border-radius: 8px;
-  background-color: rgba(241, 241, 241, 0.8);
+  background-color:  rgba($c-black9, 0.8);
 
   position: fixed;
   left: 50%;
   top: 50%;
   transform: translateY(-50%) translateX(-50%);
+  @at-root .night &{
+    background-color: rgba($c-night-black9, 0.8);
+  }
 }
 
 .svg-loading{
   animation: rotate 1.832s linear 0s infinite;
   circle{
     &.c1{
+      stroke: $c-black5;
       animation: long 1.832s cubic-bezier(0.18, 0, 0.58, 1)  0s infinite;
+      @at-root .night &{
+        stroke: $c-night-black5;
+      }
     }
     &.c2{
+      stroke: $c-black6;//UI之前是c7c7c7，但是c7c7c7不在规范中，改为$c-black6
       animation: short 1.832s cubic-bezier(0.18, 0, 0.58, 1)  0s infinite;
+      @at-root .night &{
+        stroke: $c-night-black6;
+      }
     }
   }
 }
@@ -58,5 +69,46 @@
   }
   100% {
     transform: rotate(720deg);
+  }
+}
+
+
+svg.full-loading{
+  animation: rotate 1.832s linear 0s infinite;
+}
+svg.full-loading circle.c1{
+  stroke-dasharray: 223.75 288;
+  stroke-dashoffset: 0;
+  animation: long2 1.832s cubic-bezier(0.18, 0, 0.58, 1)  0s infinite;
+}
+svg.full-loading circle.c2{
+  stroke-dasharray: 34.56 288;/*12*/
+  stroke-dashoffset: 68.12;
+  animation: short2 1.832s cubic-bezier(0.18, 0, 0.58, 1)  0s infinite;
+}
+
+@keyframes long2 {
+  0% {
+    stroke-dasharray: 223.75 288;
+  }
+  50% {
+    stroke-dasharray: 57.6 288;
+  }
+  100% {
+    stroke-dasharray: 223.75 288;
+  }
+}
+@keyframes short2 {
+  0% {
+    stroke-dasharray: 34.56 288;/*12*/
+    stroke-dashoffset: 68.12; /* 34.56*2 - 1 */
+  }
+  50% {
+    stroke-dasharray:  11.52 288; /*4*/
+    stroke-dashoffset: 22;
+  }
+  100% {
+    stroke-dasharray: 34.56 288;/*12*/
+    stroke-dashoffset: 68.12;
   }
 }
