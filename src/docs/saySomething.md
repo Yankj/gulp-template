@@ -55,7 +55,11 @@
         docsify serve docs   //预览
       ```
   - [CSS3中Animation为同一个元素添加多个动画效果](https://www.cnblogs.com/qinglin/p/7794253.html)
-
+  - fastclick为什么存在，touchstart替换click有什么问题
+    >touchstart虽然替换click 或者用touchend替换click 虽然会减掉300ms的延迟
+     但是如果用户只是想滚动下拉框的时候会误点 一样触发了touchstart 和touchend 进入链接 这样太糟糕了但是如果用click就不会 用户滑动的时候不会误点不会触发 
+    >所以一般封装的所谓 tap 事件，都是 touchstart、touchmove、touchend 相结合，做出精细的判断，不是随便用一个事件就能轻松代替 click。
+  - 深入研究一下模块化
 
 #### else
 atom markdown 预览快捷键 Shift + Ctrl + M

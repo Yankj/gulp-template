@@ -1,34 +1,79 @@
-.u-loading{
+.u-loading {
   width: 1.26rem;
   height: 1.26rem;
   border-radius: 8px;
-  background-color:  rgba($c-black9, 0.8);
-
+  background-color: rgba($c-black9, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   left: 50%;
   top: 50%;
   transform: translateY(-50%) translateX(-50%);
-  @at-root .night &{
+  @at-root .night & {
     background-color: rgba($c-night-black9, 0.8);
   }
 }
 
-.svg-loading{
+.center-loading, .full-loading {
   animation: rotate 1.832s linear 0s infinite;
-  circle{
-    &.c1{
-      stroke: $c-black5;
-      animation: long 1.832s cubic-bezier(0.18, 0, 0.58, 1)  0s infinite;
-      @at-root .night &{
-        stroke: $c-night-black5;
-      }
+  display: block;//一定记得svg转块，不然小的时候莫名的被父元素挤出来
+}
+
+circle {
+  &.c1 {
+    stroke: $c-black5;
+    animation: long 1.832s cubic-bezier(0.18, 0, 0.58, 1) 0s infinite;
+    @at-root .night & {
+      stroke: $c-night-black5;
     }
-    &.c2{
-      stroke: $c-black6;//UI之前是c7c7c7，但是c7c7c7不在规范中，改为$c-black6
-      animation: short 1.832s cubic-bezier(0.18, 0, 0.58, 1)  0s infinite;
-      @at-root .night &{
-        stroke: $c-night-black6;
-      }
+  }
+  &.c2 {
+    stroke: $c-black6; //UI之前是c7c7c7，但是c7c7c7不在规范中，改为$c-black6
+    animation: short 1.832s cubic-bezier(0.18, 0, 0.58, 1) 0s infinite;
+    @at-root .night & {
+      stroke: $c-night-black6;
+    }
+  }
+}
+
+.center-loading { width:100%;
+  height:100%;
+  circle {
+    cx:50;
+    cy:50;
+    r:20;
+    fill:none;
+    stroke-width:5;
+    &.c1 {
+      stroke-dasharray: 101.4 130;
+      stroke-dashoffset: 0
+    }
+    &.c2 {
+      stroke-dasharray: 15.6 130;
+      stroke-dashoffset: 29;
+    }
+  }
+}
+
+.full-loading {
+  width:100%;
+  height:100%;
+  circle {
+    cx:14.5;
+    cy:14.5;
+    r:12.5;
+    fill:none;
+    stroke-width:4;
+    &.c2 {
+      stroke-dasharray: 9.36 78; /*12*/
+      stroke-dashoffset: 17.72;
+      animation-name: short2;
+    }
+    &.c1 {
+      stroke-dasharray: 60.6 78; /*78*/
+      stroke-dashoffset: 0;
+      animation-name: long2;
     }
   }
 }
@@ -72,43 +117,30 @@
   }
 }
 
-
-svg.full-loading{
-  animation: rotate 1.832s linear 0s infinite;
-}
-svg.full-loading circle.c1{
-  stroke-dasharray: 223.75 288;
-  stroke-dashoffset: 0;
-  animation: long2 1.832s cubic-bezier(0.18, 0, 0.58, 1)  0s infinite;
-}
-svg.full-loading circle.c2{
-  stroke-dasharray: 34.56 288;/*12*/
-  stroke-dashoffset: 68.12;
-  animation: short2 1.832s cubic-bezier(0.18, 0, 0.58, 1)  0s infinite;
-}
-
 @keyframes long2 {
   0% {
-    stroke-dasharray: 223.75 288;
+    stroke-dasharray: 60.6 78; /*78*/
   }
   50% {
-    stroke-dasharray: 57.6 288;
+    stroke-dasharray: 23.9 78;
   }
   100% {
-    stroke-dasharray: 223.75 288;
+    stroke-dasharray: 60.6 78;
   }
 }
+
 @keyframes short2 {
   0% {
-    stroke-dasharray: 34.56 288;/*12*/
-    stroke-dashoffset: 68.12; /* 34.56*2 - 1 */
+    stroke-dasharray: 9.36 78; /*12*/
+    stroke-dashoffset: 17.72; /* 9.36*2 - 1 */
   }
   50% {
-    stroke-dasharray:  11.52 288; /*4*/
-    stroke-dashoffset: 22;
+    stroke-dasharray: 5.46 78; /*4*/
+    stroke-dashoffset: 9.92;
   }
   100% {
-    stroke-dasharray: 34.56 288;/*12*/
-    stroke-dashoffset: 68.12;
+    stroke-dasharray: 9.36 78; /*12*/
+    stroke-dashoffset: 17.72;
   }
 }
+

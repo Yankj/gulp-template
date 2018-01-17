@@ -1,0 +1,49 @@
+@import "variables";
+.pulldown-ui {
+  // top: 15px;
+  z-index: -1;
+  color: $c-black5;
+  width: 100%;
+  .effect {
+
+  }
+  .tip {
+    margin-top: 5px;
+  }
+}
+
+
+.pull-arrow{
+  $borderW :0.06rem;
+  $stickLength: .28rem;
+  $arrowLength: .2rem;
+  $arrowColor:#B4B5B7;
+  $tailLength: .07rem;
+  $tailColor:#CCCDCE;
+  width: $arrowLength;
+  height: $arrowLength;
+  border: $borderW solid $arrowColor;
+  border-right: none;
+  border-bottom: none;
+  position: relative;
+  // transform-origin:0px 0px;
+  transform:rotate(-135deg);
+  transition:transform .16s;
+  &:before{
+    content: "";
+    display: block;
+    position: absolute;
+    width:$stickLength;
+    height:$borderW;
+    background: $arrowColor;
+    border-right: $tailLength solid $tailColor;
+    left: -1px;
+    top: -1px;
+    transform-origin:$borderW/2 ;
+    transform:rotate(45deg);
+
+  }
+  &.go{
+    transform:rotate(45deg);
+  }
+}

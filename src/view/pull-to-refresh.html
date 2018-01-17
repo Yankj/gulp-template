@@ -4,22 +4,13 @@
 <head>
     @include('../static/template/common/head.html')
 
-    <script type="text/javascript" src="../static/js/lib/iscroll-lite.js"></script>
+    <script type="text/javascript" src="../static/js/mylib/zepto.js"></script>
+    <script type="text/javascript" src="../static/js/common/util.js"></script>
+    <script type="text/javascript" src="../static/js/mylib/loading.js"></script>
+    <script type="text/javascript" src="../static/js/mylib/pulldownRefresh.js"></script>
+    <script type="text/javascript" src="../static/js/pulldownrefresh.js"></script>
 
-    <script type="text/javascript">
 
-        var myScroll;
-
-        function loaded () {
-            myScroll = new IScroll('#wrapper', { mouseWheel: true });
-            myScroll.on('',function(){
-
-            })
-        }
-
-        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-
-    </script>
 
     <style type="text/css">
         * {
@@ -83,7 +74,7 @@
             overflow: hidden;
         }
 
-        #scroller {
+        .pulldown-ui {
             position: absolute;
             z-index: 1;
             -webkit-tap-highlight-color: rgba(0,0,0,0);
@@ -105,7 +96,7 @@
             text-size-adjust: none;
         }
 
-        #scroller ul {
+        .pulldown-ui ul {
             list-style: none;
             padding: 0;
             margin: 0;
@@ -113,7 +104,7 @@
             text-align: left;
         }
 
-        #scroller li {
+        .pulldown-ui li {
             padding: 0 10px;
             height: 40px;
             line-height: 40px;
@@ -123,25 +114,62 @@
             font-size: 14px;
         }
 
+        .pulldown-ui {
+            /*padding-top: .88rem;*/
+        }
+        .pull-down{
+            display: flex;
+            justify-content:center;
+            align-items:center;
+            width: 100%;
+            height: .88rem;
+        }
+        .pull-down-icon{
+            width: .2rem;
+            height: .2rem;
+            border: .06rem solid #B4B5B7;
+            border-right: none;
+            border-bottom: none;
+            position: relative;
+            -webkit-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+            -webkit-transition: -webkit-transform .16s;
+            transition: -webkit-transform .16s;
+            transition: transform .16s;
+            transition: transform .16s,-webkit-transform .16s;
+        }
+        .pull-down-icon:before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: .28rem;
+            height: .06rem;
+            background: #B4B5B7;
+            border-right: .07rem solid #CCCDCE;
+            left: -1px;
+            top: -1px;
+            -webkit-transform-origin: .03rem;
+            transform-origin: .03rem;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
     </style>
 </head>
-<body onload="loaded()">
+<body>
 <div id="header">iScroll</div>
 
 <div id="wrapper">
-    <div id="scroller">
+    <div class="pulldown-ui">
 
-        <div id="pullDown">
-            <div class="pull-down-loading"  style="height: 0.4rem;width: 0.4rem">
-                <svg class="full-loading" width="100%" height="100%" viewBox="0 0 100 100">
-                    <circle class="c1" cx="50" cy="50" r="42" fill="none" stroke-width="12" stroke="#b1b1b1"/>
-                    <circle class="c2" cx="50" cy="50" r="42" fill="none" stroke-width="12" stroke="#c7c7c7"/>
-                </svg>
-            </div>
-            <div class="pull-down-icon">
-
-            </div>
-        </div>
+        <!--<div class="pull-down">-->
+            <!--<div class="pull-down-loading hidden"  style="height: 0.4rem;width: 0.4rem">-->
+                <!--<svg class="full-loading" viewBox="0 0 29 29">-->
+                    <!--<circle class="c1"/>-->
+                    <!--<circle class="c2"/>-->
+                <!--</svg>-->
+            <!--</div>-->
+            <!--<div class="pull-down-icon"></div>-->
+        <!--</div>-->
 
         <ul>
             <li>Pretty row 1</li>
