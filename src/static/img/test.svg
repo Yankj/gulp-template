@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<svg width="200" height="200" viewPort="0 0 200 300" version="1.1" xmlns="http://www.w3.org/2000/svg">
+
+    <svg class="full-loading" viewBox="0 0 29 29">
+        <circle class="c1">
+            <animateTransform
+                    attributeName="transform"
+                    type="rotate"
+                    begin="0s"
+                    dur="1.832s"
+                    from="0  14.5 14.5"
+                    to="720  14.5 14.5"
+                    repeatCount="indefinite"/>
+        </circle>
+        <circle class="c2">
+            <animateTransform
+                    attributeName="transform"
+                    type="rotate"
+                    begin="0s"
+                    dur="1.832s"
+                    from="0  14.5 14.5"
+                    to="720  14.5 14.5"
+                    repeatCount="indefinite"/>
+        </circle>
+    </svg>
+    <style><![CDATA[
+
+ .full-loading {
+  -webkit-animation: rotate 1.832s linear 0s infinite;
+          animation: rotate 1.832s linear 0s infinite;
+  display: block; }
+
+circle.c1 {
+  stroke: #929292;
+  -webkit-animation: long 1.832s cubic-bezier(0.18, 0, 0.58, 1) 0s infinite;
+          animation: long 1.832s cubic-bezier(0.18, 0, 0.58, 1) 0s infinite; }
+  .night circle.c1 {
+    stroke: #606060; }
+
+circle.c2 {
+  stroke: #B1B1B1;
+  -webkit-animation: short 1.832s cubic-bezier(0.18, 0, 0.58, 1) 0s infinite;
+          animation: short 1.832s cubic-bezier(0.18, 0, 0.58, 1) 0s infinite; }
+  .night circle.c2 {
+    stroke: #4E4E4E; }
+    .full-loading {
+  width: 100%;
+  height: 100%; }
+  .full-loading circle {
+    cx: 14.5;
+    cy: 14.5;
+    r: 12.5;
+    fill: none;
+    stroke-width: 4; }
+    .full-loading circle.c2 {
+      stroke-dasharray: 9.36 78;
+      /*12*/
+      stroke-dashoffset: 17.72;
+      -webkit-animation-name: short2;
+              animation-name: short2; }
+    .full-loading circle.c1 {
+      stroke-dasharray: 60.6 78;
+      /*78*/
+      stroke-dashoffset: 0;
+      -webkit-animation-name: long2;
+              animation-name: long2; }
+
+@-webkit-keyframes long2 {
+  0% {
+    stroke-dasharray: 60.6 78;
+    /*78*/ }
+  50% {
+    stroke-dasharray: 23.9 78;
+    /*31*/}
+  100% {
+    stroke-dasharray: 60.6 78; } }
+
+@keyframes long2 {
+  0% {
+    stroke-dasharray: 60.6 78;
+    /*78*/ }
+  50% {
+    stroke-dasharray: 23.9 78; }
+  100% {
+    stroke-dasharray: 60.6 78; } }
+
+@-webkit-keyframes short2 {
+  0% {
+    stroke-dasharray: 9.36 78;
+    /*12*/
+    stroke-dashoffset: 17.72;
+    /* 9.36*2 - 1 */ }
+  50% {
+    stroke-dasharray: 5.46 78;
+    /*4*/
+    stroke-dashoffset: 9.92; }
+  100% {
+    stroke-dasharray: 9.36 78;
+    /*12*/
+    stroke-dashoffset: 17.72; } }
+
+@keyframes short2 {
+  0% {
+    stroke-dasharray: 9.36 78;
+    /*12*/
+    stroke-dashoffset: 17.72;
+    /* 9.36*2 - 1 */ }
+  50% {
+    stroke-dasharray: 5.46 78;
+    /*4*/
+    stroke-dashoffset: 9.92; }
+  100% {
+    stroke-dasharray: 9.36 78;
+    /*12*/
+    stroke-dashoffset: 17.72; } }
+]]></style>
+</svg>

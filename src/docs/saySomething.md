@@ -39,6 +39,7 @@
     + flex
     + line-height和padding不好使
   - svg中利用stroke-dasharray、stroke-dashoffset做loading，需要深入理解前面两个属性
+  - [svg中嵌入css](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/style)
   - SVG Sprite
     + https://www.w3cplus.com/svg/create-svg-sprite-sheet.html
     + http://www.uisdc.com/svg-icon-part-two
