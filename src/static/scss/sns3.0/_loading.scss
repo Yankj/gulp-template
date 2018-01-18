@@ -1,3 +1,26 @@
+/***
+* svg+css的loading
+* 依赖dom：
+
+<div style="height: 129px;width: 129px">
+
+    <svg class="full-loading" viewBox="0 0 29 29">
+        <circle class="c1"/>
+        <circle class="c2"/>
+    </svg>
+
+</div>
+
+
+<div class="u-loading">
+    <svg class="center-loading" viewBox="0 0 100 100">
+        <circle class="c1"/>
+        <circle class="c2"/>
+    </svg>
+</div>
+
+* 弃用，最新的loading直接用svg文件替代
+***/
 .u-loading {
   width: 1.26rem;
   height: 1.26rem;

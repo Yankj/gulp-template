@@ -22,12 +22,12 @@ const Loading = (function() {   
         style:"",
         isShow:false,
         isGo:false,
-        html: '\
-            <div class="u-loading"><svg class="svg-loading" width="100%" height="100%" viewBox="0 0 100 100">\
-                   <circle class="c1" cx="50" cy="50" r="20" fill="none" stroke-width="5" stroke-dasharray="101.4 130" stroke-dashoffset="0" stroke="#b1b1b1"/>\
-                   <circle class="c2" cx="50" cy="50" r="20" fill="none" stroke-width="5" stroke-dasharray="15.6 130" stroke-dashoffset="29" stroke="#c7c7c7"/>\
-            </div></svg>\
-        ',
+        // html: '\
+        //     <div class="u-loading"><svg class="svg-loading" width="100%" height="100%" viewBox="0 0 100 100">\
+        //            <circle class="c1" cx="50" cy="50" r="20" fill="none" stroke-width="5" stroke-dasharray="101.4 130" stroke-dashoffset="0" stroke="#b1b1b1"/>\
+        //            <circle class="c2" cx="50" cy="50" r="20" fill="none" stroke-width="5" stroke-dasharray="15.6 130" stroke-dashoffset="29" stroke="#c7c7c7"/>\
+        //     </div></svg>\
+        html: '<div class="u-pulldown-loading"><img style="width: 100%;height: 100%" src="/static/img/loading.svg"/></div>',
         init: function() {
             var me=this;
             if(!me.$ele){

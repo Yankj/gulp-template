@@ -8,42 +8,20 @@
     <script type="text/javascript" src="../static/js/common/util.js"></script>
     <script type="text/javascript" src="../static/js/mylib/loading.js"></script>
     <script type="text/javascript" src="../static/js/mylib/pulldownRefresh.js"></script>
-    <script type="text/javascript" src="../static/js/pulldownrefresh.js"></script>
-
-
 
     <style type="text/css">
-        * {
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
+        body{
+            background: #eee;
         }
-
-        html {
-            -ms-touch-action: none;
-        }
-
-        body,ul,li {
-            padding: 0;
-            margin: 0;
-            border: 0;
-        }
-
-        body {
-            font-size: 12px;
-            font-family: ubuntu, helvetica, arial;
-            overflow: hidden; /* this is important to prevent the whole page to bounce */
-        }
-
         #header {
-            position: absolute;
+            position: fixed;
             z-index: 2;
             top: 0;
             left: 0;
             width: 100%;
             height: 45px;
             line-height: 45px;
-            background: #CD235C;
+            background: #8e7980;
             padding: 0;
             color: #eee;
             font-size: 20px;
@@ -52,7 +30,7 @@
         }
 
         #footer {
-            position: absolute;
+            position: fixed;
             z-index: 2;
             bottom: 0;
             left: 0;
@@ -63,40 +41,18 @@
             border-top: 1px solid #444;
         }
 
-        #wrapper {
-            position: absolute;
-            z-index: 1;
-            top: 45px;
-            bottom: 48px;
-            left: 0;
+        #pullDownWrapper {
             width: 100%;
-            background: #ccc;
-            overflow: hidden;
+            overflow: auto;
+            padding-top:45px;
+            padding-bottom:49px;
         }
 
-        .pulldown-ui {
-            position: absolute;
-            z-index: 1;
-            -webkit-tap-highlight-color: rgba(0,0,0,0);
+        .content {
             width: 100%;
-            -webkit-transform: translateZ(0);
-            -moz-transform: translateZ(0);
-            -ms-transform: translateZ(0);
-            -o-transform: translateZ(0);
-            transform: translateZ(0);
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            -webkit-text-size-adjust: none;
-            -moz-text-size-adjust: none;
-            -ms-text-size-adjust: none;
-            -o-text-size-adjust: none;
-            text-size-adjust: none;
         }
 
-        .pulldown-ui ul {
+        .content ul {
             list-style: none;
             padding: 0;
             margin: 0;
@@ -104,7 +60,7 @@
             text-align: left;
         }
 
-        .pulldown-ui li {
+        .content li {
             padding: 0 10px;
             height: 40px;
             line-height: 40px;
@@ -113,64 +69,13 @@
             background-color: #fafafa;
             font-size: 14px;
         }
-
-        .pulldown-ui {
-            /*padding-top: .88rem;*/
-        }
-        .pull-down{
-            display: flex;
-            justify-content:center;
-            align-items:center;
-            width: 100%;
-            height: .88rem;
-        }
-        .pull-down-icon{
-            width: .2rem;
-            height: .2rem;
-            border: .06rem solid #B4B5B7;
-            border-right: none;
-            border-bottom: none;
-            position: relative;
-            -webkit-transform: rotate(-135deg);
-            transform: rotate(-135deg);
-            -webkit-transition: -webkit-transform .16s;
-            transition: -webkit-transform .16s;
-            transition: transform .16s;
-            transition: transform .16s,-webkit-transform .16s;
-        }
-        .pull-down-icon:before {
-            content: "";
-            display: block;
-            position: absolute;
-            width: .28rem;
-            height: .06rem;
-            background: #B4B5B7;
-            border-right: .07rem solid #CCCDCE;
-            left: -1px;
-            top: -1px;
-            -webkit-transform-origin: .03rem;
-            transform-origin: .03rem;
-            -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
-        }
     </style>
 </head>
 <body>
-<div id="header">iScroll</div>
+<div id="header">下拉刷新</div>
 
-<div id="wrapper">
-    <div class="pulldown-ui">
-
-        <!--<div class="pull-down">-->
-            <!--<div class="pull-down-loading hidden"  style="height: 0.4rem;width: 0.4rem">-->
-                <!--<svg class="full-loading" viewBox="0 0 29 29">-->
-                    <!--<circle class="c1"/>-->
-                    <!--<circle class="c2"/>-->
-                <!--</svg>-->
-            <!--</div>-->
-            <!--<div class="pull-down-icon"></div>-->
-        <!--</div>-->
-
+<div id="pullDownWrapper">
+    <div class="content">
         <ul>
             <li>Pretty row 1</li>
             <li>Pretty row 2</li>
@@ -228,5 +133,20 @@
 
 <div id="footer"></div>
 
+
+<script type="text/javascript">
+    window.onload = function () {
+        let pullDownRefresh = new PullDownRefresh({
+            wrapper: "#pullDownWrapper",
+            triggerFn: function() {
+                setTimeout(function () {
+                    pullDownRefresh.pullLoadingUIHide();
+                },1000)
+            }
+        });
+
+        pullDownRefresh.init();
+    }
+</script>
 </body>
 </html>

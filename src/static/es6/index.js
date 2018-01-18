@@ -1,13 +1,6 @@
-$.ajax({
-	url: "../backend1/feeds/" + 1223 + "/",
-	type: "GET",
-	dataType: "json",
-	timeout: 30000
-});
+/**
+ *
+ * Created by kunjieyan on 2018/1/11.
+ *
+ */
 
-$.ajax({
-	url: "../backend2/feeds/" + 1223 + "/",
-	type: "GET",
-	dataType: "json",
-	timeout: 30000
-});
