@@ -27,9 +27,6 @@
 .pulldown-content{
   position: relative;
   z-index:1;
-  -webkit-backface-visibility: hidden; /*元素旋转时隐藏背面*/
-  -webkit-transform-style: preserve-3d; /*保留3D空间*/
-
 }
 
 
