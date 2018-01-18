@@ -62,10 +62,13 @@
     >所以一般封装的所谓 tap 事件，都是 touchstart、touchmove、touchend 相结合，做出精细的判断，不是随便用一个事件就能轻松代替 click。
   - 深入研究一下模块化
   - 页面中的demo工具
-   + codepen 
-   + jsfiddle
-   + jsrun
-  
+       + codepen 
+       + jsfiddle
+       + jsrun
+   - 服务端渲染
+        + [ Nuxt.js](https://zh.nuxtjs.org/guide)
+        + [vue服务端渲染](https://ssr.vuejs.org/zh/structure.html)
+      
 
 #### else
 atom markdown 预览快捷键 Shift + Ctrl + M
