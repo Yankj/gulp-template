@@ -41,8 +41,9 @@
   - svg中利用stroke-dasharray、stroke-dashoffset做loading，需要深入理解前面两个属性
   - [svg中嵌入css](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/style)
   - SVG Sprite
-    + https://www.w3cplus.com/svg/create-svg-sprite-sheet.html
-    + http://www.uisdc.com/svg-icon-part-two
+    + [SVG Sprite](https://www.w3cplus.com/svg/create-svg-sprite-sheet.html)
+    + [腾讯干货！超实用的高清图标SVG解决方案全总结（下）](http://www.uisdc.com/svg-icon-part-two)
+    + [未来必热：SVG Sprite技术介绍](http://www.zhangxinxu.com/wordpress/2014/07/introduce-svg-sprite-technology/)
   - 文档生成
     + gitbook
     + [jsdoc](https://www.awesomes.cn/repos/NodeJS/Documentations)
