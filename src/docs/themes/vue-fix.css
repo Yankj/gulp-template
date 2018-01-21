@@ -1,0 +1,8 @@
+/**
+* 由于文档主题css与sns3.0.css的冲突
+* 这里写一些需要覆盖的css
+*/
+
+.content [type='button'],.content [role='button']{
+    margin: 10px;
+}
