@@ -3,7 +3,7 @@ let config = {
     temp: 'temp/',
     dist: 'dist/',
     devHost: "",
-    startPath: '/view/index.html', //自行修改
+    startPath: '/view/docs/#/', //自行修改
     buryPointSwitch: false, //是否埋点
     isImgOptmize: false, //是否开启图片压缩
     cdnPath: '//sns_lib.cdn.sohusce.com/huui/', //自行修改

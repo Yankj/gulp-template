@@ -26,6 +26,9 @@ if (env === 'dev') {
     require('./gulp/tasks/common/sass.js');
     require('./gulp/tasks/common/uncss.js');
     require('./gulp/tasks/custom/cssSprite.js');
+    require('./gulp/tasks/custom/px2rem.js');
+    require('./gulp/tasks/custom/copyCss2Docs.js');
+    require('./gulp/tasks/custom/copyDocs.js');
 } else {
     require('./gulp/tasks/common/cdnPre.js');
     require('./gulp/tasks/common/cssMin.js');

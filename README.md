@@ -1,79 +1,73 @@
-# gulp-template-fe
-> 基于gulp的自动化构建项目模板
+## HUUI
+> 基于狐友3.0UI的前端UI组件库
 
-## 功能
-+ SASS编译，错误自重启，移除冗余CSS，增量更新
-+ Babel编译，ES6支持
-+ eslint检查
-+ CSS雪碧图
-+ 图片压缩
-+ 文件组合(fileInclude)
-+ 统一 npm scripts 脚本命令
-+ HTML、JS、CSS合并压缩，JS自动defer
-+ 静态资源(JS,CSS,Image)加MD5戳防缓存
-+ Zip支持
-+ 本地开发，实时刷新
-+ 更多...(提取关键CSS，CSS异步加载等)
+### 简要说明
 
-
-## 使用方式：
+#### 项目启动及打包
+打包脚本基于`gulp-template-fe`项目;
+项目启动，打包相关说明请看`gulp-template-fe.md`;
 ```javascript
 //0、安装依赖
 npm install
 //1、本地开发
 npm run dev
 //2、打测试环境包
-npm run build-test                         //静态资源不放CDN
-//3、打生产环境包
-npm run build-product               //静态资源不放CDN
-npm run build-product-cdn         //静态资源放CDN
+npm run build-test                   //静态资源不放CDN
 ```
 
-## 文件结构
+#### 文档撰写
+文档基于`docsify`，你只需编写markdown文件，编写`src/docs/README.md`即可。
 
->生成该结构命令为：treer -i "/(\.git|node_modules)/" -e tree.md
+访问`localhost:3000/view/docs/#/`即可查看文档，sce上的服务地址`http://huui-test.sce.sohuno.com/view/docs/#/`
 
+如需添加新的页面，可在`src/docs/`下添加其他markdown文件:
+> 例如建一个test.md，则可以`http://localhost:3000/view/docs/#/test`访问
+[更多关于docsify](https://docsify.js.org/#/)
+
+
+### 目录结构
 ```html
+├─config.js
+├─gulp-template-fe.md
 ├─gulpfile.js
 ├─package.json
 ├─README.md
-├─temp                              //与src文件夹对应，存放ES6，SASS，HTML(含公用模板)编译后的文件
+├─src
 |  ├─view
-|  |  └index.html
-|  ├─static
-|  |   ├─js
-|  |   | ├─index.js
-|  |   | ├─lib
-|  |   | |  ├─doT.min.js
-|  |   | |  ├─vconsole-elements.min.js
-|  |   | |  ├─vconsole-resources.min.js
-|  |   | |  ├─vconsole.min.js
-|  |   | |  └zepto.min.js
-|  |   | ├─common
-|  |   | |   └util.js
-|  |   ├─css
-|  |   |  ├─index.css
-|  |   |  ├─common
-|  |   |  |   ├─base.css
-|  |   |  |   └common.css
-├─src                               //源文件，推荐使用ES6，SASS，HTML模板等写法
-|  ├─view
-|  |  └index.html
+|  |  ├─index.html
+|  |  ├─loading.html
+|  |  └pull-to-refresh.html
 |  ├─static
 |  |   ├─template
 |  |   |    ├─common
-|  |   |    |   ├─css.html
-|  |   |    |   ├─mixpanel-product.html
-|  |   |    |   ├─mixpanel-test.html
+|  |   |    |   ├─head.html
 |  |   |    |   └vconsole.html
-|  |   ├─scss
+|  |   ├─scss                                 //包含项目所有scss，_开头的用来引用 不会编译
 |  |   |  ├─index.scss
-|  |   |  ├─common
-|  |   |  |   ├─base.scss
-|  |   |  |   └common.scss
+|  |   |  ├─_base.scss
+|  |   |  ├─_common.scss
+|  |   |  ├─_const.scss
+|  |   |  ├─sns3.0
+|  |   |  |   ├─sns3.0.scss
+|  |   |  |   ├─_extends.scss                 //用来继承的类，从extends目录引入    
+|  |   |  |   ├─_loading.scss                    
+|  |   |  |   ├─_mixins.scss                  //用来调用的混合，从mixins目录引入 
+|  |   |  |   ├─_pulldown.scss                //下拉刷新相关的css
+|  |   |  |   ├─_variables.scss               //sns3.0的 变量
+|  |   |  |   ├─mixins
+|  |   |  |   |   ├─_button.scss
+|  |   |  |   |   ├─_transition.scss
+|  |   |  |   |   └_utils.scss
+|  |   |  |   ├─extends
+|  |   |  |   |    ├─_button.scss
+|  |   |  |   |    └_utils.scss
 |  |   ├─img
+|  |   |  ├─favicon.ico
+|  |   |  └loading.svg
 |  |   ├─es6
-|  |   |  ├─index.js
+|  |   |  ├─mylib
+|  |   |  |   ├─loading.js
+|  |   |  |   └pulldownRefresh.js
 |  |   |  ├─lib
 |  |   |  |  ├─doT.min.js
 |  |   |  |  ├─vconsole-elements.min.js
@@ -81,77 +75,12 @@ npm run build-product-cdn         //静态资源放CDN
 |  |   |  |  ├─vconsole.min.js
 |  |   |  |  └zepto.min.js
 |  |   |  ├─common
-|  |   |  |   └util.js
-├─gulp         // gulp 任务结合，分common task 和 custom task，custom下可自行添加特定业务类task
-|  ├─tasks
-|  |   ├─custom
-|  |   |   ├─cssSprite.js
-|  |   |   ├─px2rem.js
-|  |   |   └sceInit.js
-|  |   ├─common
-|  |   |   ├─cdnPre.js
-|  |   |   ├─cssMin.js
-|  |   |   ├─delRedundant.js
-|  |   |   ├─devServer.js
-|  |   |   ├─ES6.js
-|  |   |   ├─eslint.js
-|  |   |   ├─fileInclude.js
-|  |   |   ├─htmlMin.js
-|  |   |   ├─imgMin.js
-|  |   |   ├─jsMin.js
-|  |   |   ├─revision.js
-|  |   |   ├─sass.js
-|  |   |   ├─usemin.js
-|  |   |   └zip.js
-├─dist                              //打包后的文件夹，与temp文件夹对应
-|  ├─sce_918901818.zip
-|  ├─sce
-|  |  ├─app.yaml
-|  |  ├─conf
-|  |  |  ├─nginx_server.inc
-|  |  |  └uwsgi.ini
-|  |  ├─app
-|  |  |  ├─view
-|  |  |  |  └index.html
-|  |  |  ├─static
-|  |  |  |   ├─js
-|  |  |  |   | └main.70b5.js
-|  |  |  |   ├─css
-|  |  |  |   |  └main.6017.css
-├─config.js        // 特定项目相关的配置文件，如后端服务域名等
-
+|  |   |  |   └util.js                          //工具库
+|  ├─docs                                       //相关文档，只需编写README.md即可
+|  |  ├─.nojekyll
+|  |  ├─index.html
+|  |  ├─README.md                               //文档markdown文件
+|  |  ├─themes
+|  |  |   ├─vue-fix.css
+|  |  |   └vue.css
 ```
-## 注意点
-+ uncss无法监听到js文件中动态添加的类名，所以当js文件操作了类名A，同时不希望uncss删掉A，需要在uncss中配置ignore选项，如：
-
-```javascript
-gulp.task('default', function () {
-    return gulp.src('styles/**/*.scss')
-        .pipe(sass())
-        .pipe(concat('main.css'))
-        .pipe(uncss({
-            html: ['index.html', 'posts/**/*.html', 'http://example.com'],
-            ignore:['.A']
-        }))
-        .pipe(nano())
-        .pipe(gulp.dest('./out'));
-});
-```
-+ 本模板默认只有js、css、img三种静态资源，如需添加新资源，如font等，请自行添加task
-
-## 维护须知
-+ 新增gulp任务时，引入的插件名请遵循驼峰式结构，且使用gulp插件的全称形式，如gulp-rev-all，应该取名
-
-```javascript
-// good
-let gulpRevAll=require('gulp-rev-all');
-// bad
-revAll=require('gulp-rev-all');
-```
-
-+ 给每个新增的task写上注释
-
-## Else
-- sns分支在@冯银超同学的基础上做了些改动以适应sns业务
-
-## Help
