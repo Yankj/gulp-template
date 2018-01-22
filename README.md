@@ -18,11 +18,14 @@ npm run build-test                   //静态资源不放CDN
 #### 文档撰写
 文档基于`docsify`，你只需编写markdown文件，编写`src/docs/README.md`即可。
 
-访问`localhost:3000/view/docs/#/`即可查看文档，sce上的服务地址`http://huui-test.sce.sohuno.com/view/docs/#/`
+本地访问`localhost:3000/view/docs/#/`即可查看文档
+
+sce上的服务地址`http://huui-test.sce.sohuno.com/view/docs/#/`
 
 如需添加新的页面，可在`src/docs/`下添加其他markdown文件:
 > 例如建一个test.md，则可以`http://localhost:3000/view/docs/#/test`访问
-[更多关于docsify](https://docsify.js.org/#/)
+
+[更多关于docsify>>](https://docsify.js.org/#/)
 
 
 ### 目录结构
