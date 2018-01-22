@@ -14,11 +14,14 @@ gulp.task('sceInit', function() {
 	var configObj = config.sce[env].proxyTable,
 		opt = [];
 	for (var i in configObj) {
-		var obj = {
-			key: i,
-			value: configObj[i]
+		if(configObj) {
+            var obj = {
+                key: i,
+                value: configObj[i]
+            }
+            opt.push(obj);
 		}
-		opt.push(obj);
+
 	}
 	// 2、创建 nginx_server.inc 文件
 	var nginxTpl = `

@@ -1,6 +1,6 @@
 /****
  *  -------------------------
- *  utils （1.0）
+ *  utils （V1.0）
  *  Author: 搜狐社交产品中心FE
  *  Help: yankunjie
  *  -------------------------
@@ -37,7 +37,7 @@ const Util = (() => {
         getQS (search, name) {
             var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
             var r = decodeURIComponent(search).match(reg);
-            if (r != null) return r[2];
+            if (r !== null) return r[2];
             return null;
         },
 
@@ -84,7 +84,7 @@ const Util = (() => {
 
         htmlDecode (str) {
             var s = "";
-            if (str.length == 0) return "";
+            if (str.length === 0) return "";
             s = str.replace(/&amp;/g, "&");
             s = s.replace(/&lt;/g, "<");
             s = s.replace(/&gt;/g, ">");

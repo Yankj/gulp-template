@@ -4,11 +4,13 @@
 <head>
     @include('../static/template/common/head.html')
 
-    <script type="text/javascript" src="../static/js/mylib/zepto.js"></script>
-    <script type="text/javascript" src="../static/js/common/util.js"></script>
+    <script type="text/javascript" src="../static/js/lib/zepto.min.js"></script>
+    <!-- build:js ../static/js/loading.js -->
     <script type="text/javascript" src="../static/js/mylib/loading.js"></script>
+    <!-- endbuild -->
+    <!-- build:js ../static/js/pulldownRefresh.js -->
     <script type="text/javascript" src="../static/js/mylib/pulldownRefresh.js"></script>
-
+    <!-- endbuild -->
     <style type="text/css">
         body{
             background: #eee;

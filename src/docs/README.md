@@ -1,4 +1,4 @@
-<h1 align="center">HUI<h1/>
+<h1 align="center">HUUI<h1/>
 
 ## 它是什么
 > 基于狐友3.0UI的前端UI组件库
@@ -6,7 +6,7 @@
 ## 快速开始
 ### 文档说明
 #### sns3.0.css 
-使用前当然是先在页面中引入[sns3.0.css]啦
+使用前当然是先在页面中引入[sns3.0.css](../../static/css/sns3.0.css ":ignore")啦
 ##### 输出rem
 sns3.0.css采用rem方案，以html的font-size为50px为基准，以750px宽的iphone6的设计稿（即2倍稿）为基准。
 开发文件sns.scss中均使用px为单位，编译时自动化转rem。
@@ -79,7 +79,55 @@ sns3.0.css已包含对应夜间模式的组件样式。
 ```
      
 ### loading
-  只需引用[svg格式文件]()
+  有两种引入方式：
+  #### 使用svg文件引入
+  只需引用[svg格式文件](../../static/img/loading.svg ":ignore 下载loading文件")，即可使用动画效果。
   
   你可以自己包一层容器，例如下面包一个页面居中的loading
 <iframe width="100%" height="300" src="//jsrun.net/R6qKp/embedded/all/light/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+  #### 使用js文件引入
+  引入[loading.js](../../static/js/loading.js ":ignore")，可以动态控制loading显示隐藏
+  
+  初始化实例：
+```js
+ const myLoading = new Loading({
+      wrapper:".l-loading"
+ });
+```
+然后即可调用`myLoading.show()`,`myLoading.go()`等方法
+##### loading.js提供的方法
+
+##### loading.js提供的属性
+
+
+### 下拉刷新
+你可以引入[pullDownRefresh.js](../../static/js/pullDownRefresh.js ":ignore")让你的容器支持下拉刷新
+
+#### 依赖
+需要引入的js依赖
+
+    - zepto/jquery
+    - Loading.js
+#### 使用方法
+```js
+        let pullDownRefresh = new PullDownRefresh({
+            wrapper: "#pullDownWrapper",//需要嵌入下拉刷新的容器 
+            triggerFn: function() {
+                //这里是下拉时触发的回调函数
+                
+                //你需要手动在适当的你需要的时机隐藏loading，调用pullDownRefresh.pullLoadingUIHide();
+            }
+        });
+
+        pullDownRefresh.init();
+
+```
+    
+
+
+
+
+
+
+
+

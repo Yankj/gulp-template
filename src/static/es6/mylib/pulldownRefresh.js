@@ -1,23 +1,36 @@
 /*
- * 下拉刷新
  *
- * ------------
+ * --------------------------
+ *  *  下拉刷新 （V1.0）
+ *  Author: 搜狐社交产品中心FE
+ *  Help: yankunjie、liuxuefeng
+ *  -------------------------
  * js依赖：
  * - zepto/jquery
  * - Loading.js
- * ------------
  * 
- * 使用：
+ * 使用方法：
  * var pullDownRefresh = new PullDownRefresh({wrapper:"#pullDownWrapper"});
  * pullDownRefresh.init();
  *
  * 必传参数：
- * @wrapper 需要嵌入下拉刷新的容器 默认 '#pullDownWrapper'
+ * @param:  wrapper
+ * 需要嵌入下拉刷新的容器 默认 '#pullDownWrapper'
  *
  */
-import Helper from '../common/util.js'
 
-    ;
+
+;
+const ua = navigator.userAgent;
+const util = {
+    ua: {
+        mobile: !!ua.match(/(iPhone|iPad|iPod|iOS|android)/i),
+        ios: ua.match(/OS ([\d_]+) like Mac OS X/),//版本格式9_1
+        android: ua.match(/Android ([\d.]+)/),
+    }
+};
+let Helper = window.Util || window.Helper || util;
+
 const PullDownRefresh = (function () {
     "use strict"
 
@@ -322,9 +335,9 @@ window.PullDownRefresh = PullDownRefresh;
  * 依赖：
  * zepto/jquery
  * 参数：
- * boxSlct //loading动画的base父容器 默认 'body'
+ * wrapper //loading动画的base父容器 默认 'body'
  * demo：
- * new PullArrow({boxSlct:"body"}).show().go();
+ * new PullArrow({wrapper:"body"}).show().go();
  */
 
 
@@ -336,7 +349,7 @@ const PullArrow = (function () {
     }
 
     PullArrow.prototype = { //类方法
-        boxSlct: 'body',//PullArrow 基准父容器选择器
+        wrapper: 'body',//PullArrow 基准父容器选择器
         $box: null,//同时支持传入$box  优先级最高
         $ele: null,
         style: "",
@@ -348,7 +361,7 @@ const PullArrow = (function () {
             // console.log(me.$ele,me.isShow);
             if (!me.$ele) {
                 var spn = $(me.html);
-                me.$box = me.$box || $(me.boxSlct);
+                me.$box = me.$box || $(me.wrapper);
                 me.$box.append(spn);
                 me.$ele = spn;
                 spn.attr("style", me.style);

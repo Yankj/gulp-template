@@ -206,14 +206,8 @@
 * c2的stroke-dashoffset再减一个1 免得连不上
 -->
 
-
-<script src="../static/js/lib/zepto.min.js"></script>
-<script src="../static/js/lib/doT.min.js"></script>
 <!-- 在 test 环境会引入vconsole调试工具 -->
 @if (env === 'test') { @include('../static/template/common/vconsole.html') }
-<!-- 当开启config.js中埋点开关时会引入埋点脚本  -->
-@if(buryPointSwitch==='true'){ @if (env === 'test'){@include('../static/template/common/mixpanel-test.html') }
-@if(env==='product') { @include('../static/template/common/mixpanel-product.html') } }
 </body>
 
 <script type="text/javascript">
