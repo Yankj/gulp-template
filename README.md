@@ -14,6 +14,7 @@ npm run dev
 //2、打测试环境包
 npm run build-test                   //静态资源不放CDN
 ```
+sce项目名称`huui-test`
 
 #### 文档撰写
 文档基于`docsify`，你只需编写markdown文件，编写`src/docs/README.md`即可。
